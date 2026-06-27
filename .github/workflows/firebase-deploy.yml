@@ -3,10 +3,6 @@ on:
   push:
     branches:
       - main
-permissions:
-  checks: write
-  contents: read
-  pull-requests: write
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -26,15 +22,15 @@ jobs:
         run: |
           if [ -z "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}" ]; then
             echo "ERROR: El secreto FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 esta VACIO o NO EXISTE."
-            echo "Por favor, configuralo en Settings > Secrets and variables > Actions > New repository secret"
             exit 1
           else
             echo "OK: El secreto de Firebase esta configurado en GitHub."
           fi
       - name: Desplegar en Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}
-          channelId: live
-          projectId: architecture-studio-ee3e4
+        env:
+          FIREBASE_KEY_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}
+        run: |
+          echo "$FIREBASE_KEY_JSON" > firebase-key.json
+          export GOOGLE_APPLICATION_CREDENTIALS=firebase-key.json
+          npx firebase-tools deploy --only hosting --project architecture-studio-ee3e4
+          rm firebase-key.json
