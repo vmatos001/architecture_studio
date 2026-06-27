@@ -1,37 +1,34 @@
-<div class="scroll-container relative h-[180vh] w-full bg-background">
-  <!-- Sticky frame container -->
-  <div class="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-    
-    <!-- 12-Column Blueprint Grid Overlay -->
-    <div class="grid-overlay absolute inset-0 pointer-events-none z-10 hidden md:block"></div>
-    
-    <!-- Poster image (instant LCP) -->
-    <img 
-      id="heroPoster"
-      alt="DISERA Hero Concept Poster" 
-      class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-700 opacity-100" 
-      src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3wd18DR_01sCb0IXUadfDodb_VfLEG1nEmCTwaYyfGMewq6JVOsJRWa0_7KbUAWNHeF8irWTtucGe1mAtwT2ykUG4cloceEjx_Ctbh3gOf_mcESqBniabKQB9FG-Z7xt89Jd15h1ARCdxGaQo9wm3hw8_jdkH0wxk9uEUEhjAD95eBQhltHIE_Iiyiy0f_nviq3OQ9ii-mEjHn5cqtCI_Yjw1SjdGP_l32b6MpegK218CwaUgeeXZEUapRF8OK3d86DaTMPx_LPU"
-    />
-    
-    <!-- Video Element -->
-    <video 
-      id="heroVideo"
-      class="absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700" 
-      muted 
-      playsinline 
-      loop 
-      preload="none"
-    >
-      <!-- We will inject the src dynamically via script -->
-    </video>
-    
-    <!-- Subtle indicator overlay -->
-    <div class="absolute bottom-12 left-mobile-margin md:left-grid-margin z-10 flex items-center gap-4 select-none">
-      <div class="w-12 h-[1px] bg-travertine/30">
-        <div class="h-full bg-travertine w-1/3 animate-pulse"></div>
-      </div>
-      <span class="font-technical-data text-technical-data text-travertine/60 tracking-wider">SCROLL TO REVEAL</span>
+<div class="relative h-screen w-full overflow-hidden bg-background">
+  <!-- 12-Column Blueprint Grid Overlay -->
+  <div class="grid-overlay absolute inset-0 pointer-events-none z-10 hidden md:block"></div>
+  
+  <!-- Poster image (instant LCP) -->
+  <img 
+    id="heroPoster"
+    alt="DISERA Hero Concept Poster" 
+    class="absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-700 opacity-100" 
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3wd18DR_01sCb0IXUadfDodb_VfLEG1nEmCTwaYyfGMewq6JVOsJRWa0_7KbUAWNHeF8irWTtucGe1mAtwT2ykUG4cloceEjx_Ctbh3gOf_mcESqBniabKQB9FG-Z7xt89Jd15h1ARCdxGaQo9wm3hw8_jdkH0wxk9uEUEhjAD95eBQhltHIE_Iiyiy0f_nviq3OQ9ii-mEjHn5cqtCI_Yjw1SjdGP_l32b6MpegK218CwaUgeeXZEUapRF8OK3d86DaTMPx_LPU"
+  />
+  
+  <!-- Video Element (Autoplay in loop) -->
+  <video 
+    id="heroVideo"
+    class="absolute inset-0 w-full h-full object-cover z-0 opacity-0 transition-opacity duration-700" 
+    autoplay 
+    loop 
+    muted 
+    playsinline 
+    preload="none"
+  >
+    <!-- We will inject the src dynamically via script -->
+  </video>
+  
+  <!-- Subtle indicator overlay -->
+  <div class="absolute bottom-12 left-mobile-margin md:left-grid-margin z-10 flex items-center gap-4 select-none">
+    <div class="w-12 h-[1px] bg-travertine/30">
+      <div class="h-full bg-travertine w-1/3 animate-pulse"></div>
     </div>
+    <span class="font-technical-data text-technical-data text-travertine/60 tracking-wider">DISERA ESTUDIO</span>
   </div>
 </div>
 
@@ -45,17 +42,11 @@
 </style>
 
 <script>
-  // Lazy load video source and handle scroll scrubbing
+  // Lazy load video source and autoplay
   const video = document.getElementById('heroVideo') as HTMLVideoElement;
   const poster = document.getElementById('heroPoster') as HTMLImageElement;
-  const container = document.querySelector('.scroll-container') as HTMLDivElement;
   
   const videoSrc = "https://res.cloudinary.com/dyn04hssj/video/upload/f_auto,q_auto/cinematic_architectural_transformation_2026_pbbzps.webm";
-
-  // Check if browser is mobile or touch-oriented
-  const isTouchDevice = () => {
-    return ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-  };
 
   const lazyLoadVideo = () => {
     if (!video) return;
@@ -64,7 +55,7 @@
     video.src = videoSrc;
     video.load();
 
-    // Fade-in when ready
+    // Fade-in when ready to play
     video.addEventListener('canplaythrough', () => {
       video.classList.remove('opacity-0');
       video.classList.add('opacity-100');
@@ -72,67 +63,12 @@
         poster.classList.remove('opacity-100');
         poster.classList.add('opacity-0');
       }
-
-      // Initialize interactiveness
-      if (isTouchDevice()) {
-        // Fallback for touch/mobile devices: just autoplay normal loop
-        video.play().catch(err => console.log("Autoplay failed:", err));
-      } else {
-        // Desktop scrub mode
-        initScrubMode();
-      }
+      
+      // Explicitly trigger play to handle browser autoplay policies
+      video.play().catch(err => {
+        console.log("Autoplay failed or was blocked by browser:", err);
+      });
     }, { once: true });
-  };
-
-  // Scrub Mode Logic (Lerp + requestAnimationFrame)
-  const initScrubMode = () => {
-    if (!video || !container) return;
-
-    // Pause video so we can control frames manually
-    video.pause();
-
-    let targetTime = 0;
-    let currentTime = 0;
-    let isSeeking = false;
-
-    // Listen to scroll events
-    window.addEventListener('scroll', () => {
-      const rect = container.getBoundingClientRect();
-      const containerHeight = rect.height;
-      const top = -rect.top;
-      const maxScroll = containerHeight - window.innerHeight;
-
-      if (maxScroll > 0 && video.duration) {
-        const fraction = Math.max(0, Math.min(1, top / maxScroll));
-        targetTime = fraction * video.duration;
-      }
-    }, { passive: true });
-
-    // Smooth Lerp loop inside requestAnimationFrame
-    const updateLoop = () => {
-      if (video.duration && !isSeeking) {
-        // Lerp formula: current += (target - current) * factor
-        // 0.15 is highly responsive but smooth
-        currentTime += (targetTime - currentTime) * 0.15;
-
-        // Clamp to video bounds
-        if (currentTime < 0) currentTime = 0;
-        if (currentTime > video.duration) currentTime = video.duration;
-
-        // Only update if difference is noticeable
-        if (Math.abs(currentTime - video.currentTime) > 0.01) {
-          isSeeking = true;
-          video.currentTime = currentTime;
-        }
-      }
-      requestAnimationFrame(updateLoop);
-    };
-
-    video.addEventListener('seeked', () => {
-      isSeeking = false;
-    });
-
-    requestAnimationFrame(updateLoop);
   };
 
   // Run on DOM loaded
