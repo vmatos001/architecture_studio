@@ -27,10 +27,10 @@ jobs:
             echo "OK: El secreto de Firebase esta configurado en GitHub."
           fi
       - name: Desplegar en Firebase Hosting
-        env:
-          FIREBASE_KEY_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}
         run: |
-          echo "$FIREBASE_KEY_JSON" > firebase-key.json
+          cat << 'EOF' > firebase-key.json
+          ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}
+          EOF
           export GOOGLE_APPLICATION_CREDENTIALS=firebase-key.json
-          npx firebase-tools deploy --only hosting --project architecture-studio-ee3e4
+          npx firebase deploy --only hosting --project architecture-studio-ee3e4
           rm firebase-key.json
