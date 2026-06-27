@@ -56,7 +56,7 @@
     video.load();
 
     // Fade-in when ready to play
-    video.addEventListener('canplaythrough', () => {
+    video.addEventListener('canplay', () => {
       video.classList.remove('opacity-0');
       video.classList.add('opacity-100');
       if (poster) {
