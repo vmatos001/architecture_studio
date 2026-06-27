@@ -34,3 +34,9 @@ jobs:
           export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/firebase-key.json
           npx -p firebase-tools firebase deploy --only hosting --project architecture-studio-ee3e4 > deploy.log 2>&1 || (cat deploy.log && exit 1)
           rm firebase-key.json
+      - name: Subir log de error
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: firebase-deploy-log
+          path: deploy.log
