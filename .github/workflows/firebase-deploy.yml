@@ -20,23 +20,24 @@ jobs:
         run: npm run build
       - name: Validar Secreto de Firebase
         run: |
-          if [ -z "${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}" ]; then
-            echo "ERROR: El secreto FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 esta VACIO o NO EXISTE."
-            exit 1
-          else
-            echo "OK: El secreto de Firebase esta configurado en GitHub."
-          fi
-      - name: Desplegar en Firebase Hosting
+          node -e "
+            try {
+              const data = JSON.parse(process.env.FIREBASE_KEY);
+              console.log('OK: El secreto de Firebase es un JSON valido.');
+              console.log('Project ID:', data.project_id);
+              console.log('Client Email:', data.client_email);
+              if (!data.private_key) throw new Error('private_key esta vacia');
+            } catch (err) {
+              console.error('ERROR: El secreto de Firebase NO es un JSON valido o le faltan campos:', err.message);
+              process.exit(1);
+            }
+          "
         env:
-          FIREBASE_KEY_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}
-        run: |
-          node -e "const fs = require('fs'); fs.writeFileSync('firebase-key.json', process.env.FIREBASE_KEY_JSON)"
-          export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/firebase-key.json
-          npx -p firebase-tools firebase deploy --only hosting --project architecture-studio-ee3e4 --non-interactive > deploy.log 2>&1 || (cat deploy.log && exit 1)
-          rm firebase-key.json
-      - name: Subir log de error
-        if: failure()
-        uses: actions/upload-artifact@v4
+          FIREBASE_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}
+      - name: Desplegar en Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          name: firebase-deploy-log
-          path: deploy.log
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}
+          channelId: live
+          projectId: architecture-studio-ee3e4
