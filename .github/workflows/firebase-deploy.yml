@@ -25,14 +25,17 @@ jobs:
       - name: Validar Secreto de Firebase
         run: |
           node -e "
+            const crypto = require('crypto');
             try {
               const data = JSON.parse(process.env.FIREBASE_KEY);
               console.log('OK: El secreto de Firebase es un JSON valido.');
               console.log('Project ID:', data.project_id);
               console.log('Client Email:', data.client_email);
               if (!data.private_key) throw new Error('private_key esta vacia');
+              crypto.createPrivateKey(data.private_key);
+              console.log('OK: El PEM de la clave privada es valido!');
             } catch (err) {
-              console.error('ERROR: El secreto de Firebase NO es un JSON valido o le faltan campos:', err.message);
+              console.error('ERROR: El secreto de Firebase o su clave PEM no son validos:', err.message);
               process.exit(1);
             }
           "
