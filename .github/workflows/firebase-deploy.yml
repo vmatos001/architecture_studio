@@ -30,7 +30,7 @@ jobs:
         env:
           FIREBASE_KEY_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}
         run: |
-          printf "%s" "$FIREBASE_KEY_JSON" > firebase-key.json
+          node -e "const fs = require('fs'); fs.writeFileSync('firebase-key.json', process.env.FIREBASE_KEY_JSON)"
           export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/firebase-key.json
           npx -p firebase-tools firebase deploy --only hosting --project architecture-studio-ee3e4 > deploy.log 2>&1 || (cat deploy.log && exit 1)
           rm firebase-key.json
