@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Proyectos | DISERA Estudio de Arquitectura</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-error-container": "#93000a",
+                "brushed-bronze": "#9E8060",
+                "surface-container-high": "#ece8e1",
+                "inverse-surface": "#31302c",
+                "primary-fixed-dim": "#c8c6c5",
+                "secondary": "#74593c",
+                "travertine": "#EAE6DF",
+                "inverse-primary": "#c8c6c5",
+                "primary-container": "#1c1b1b",
+                "on-secondary-container": "#795e40",
+                "surface-container-highest": "#e6e2db",
+                "surface-container": "#f1ede6",
+                "on-tertiary-fixed": "#141b2f",
+                "on-surface": "#1c1c18",
+                "on-background": "#1c1c18",
+                "outline-variant": "#c4c7c7",
+                "on-tertiary-container": "#7d839c",
+                "error": "#ba1a1a",
+                "shattered-plaster": "#8C92AC",
+                "surface-variant": "#e6e2db",
+                "on-secondary-fixed": "#2a1802",
+                "surface-dim": "#dddad3",
+                "surface-tint": "#5f5e5e",
+                "obsidian": "#121212",
+                "tertiary-container": "#141b2f",
+                "on-surface-variant": "#444748",
+                "tertiary-fixed": "#dce1fe",
+                "surface-container-lowest": "#ffffff",
+                "on-primary-fixed": "#1c1b1b",
+                "on-error": "#ffffff",
+                "on-secondary-fixed-variant": "#5a4227",
+                "tertiary": "#000000",
+                "background": "#fdf9f2",
+                "secondary-fixed": "#ffddba",
+                "primary": "#000000",
+                "error-container": "#ffdad6",
+                "primary-fixed": "#e5e2e1",
+                "on-tertiary-fixed-variant": "#40465d",
+                "on-primary-fixed-variant": "#474646",
+                "inverse-on-surface": "#f4f0e9",
+                "surface-container-low": "#f7f3ec",
+                "secondary-fixed-dim": "#e3c09d",
+                "on-secondary": "#ffffff",
+                "surface": "#fdf9f2",
+                "on-primary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "outline": "#747878",
+                "on-primary-container": "#858383",
+                "tertiary-fixed-dim": "#c0c5e1",
+                "surface-bright": "#fdf9f2",
+                "secondary-container": "#fed9b4"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "mobile-margin": "1.5rem",
+                "hairline": "1px",
+                "grid-gutter": "2rem",
+                "section-padding": "8rem",
+                "grid-margin": "4rem"
+            },
+            "fontFamily": {
+                "display-lg-mobile": ["Outfit"],
+                "label-sm": ["Inter"],
+                "body-lg": ["Inter"],
+                "headline-md": ["Outfit"],
+                "technical-data": ["Inter"],
+                "body-md": ["Inter"],
+                "display-lg": ["Outfit"]
+            },
+            "fontSize": {
+                "display-lg-mobile": ["48px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "300"}],
+                "label-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.12em", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                "headline-md": ["32px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "300"}],
+                "technical-data": ["11px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "0.15em", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+        
+        .grid-line-v {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: rgba(18, 18, 18, 0.08);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .grid-line-h {
+            width: 100%;
+            height: 1px;
+            background-color: rgba(18, 18, 18, 0.08);
+            pointer-events: none;
+        }
+
+        .filter-transition {
+            transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .image-zoom:hover img {
+            transform: scale(1.05);
+        }
+        
+        body {
+            background-color: #fdf9f2;
+            cursor: crosshair;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #9E8060;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-background selection:bg-brushed-bronze selection:text-travertine">
+<!-- Background Grid Lines (12 Columns Desktop) -->
+<div class="hidden md:block">
+<div class="grid-line-v" style="left: 4rem;"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 1/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 2/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 3/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 4/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 5/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 6/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 7/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 8/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 9/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 10/12);"></div>
+<div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 11/12);"></div>
+<div class="grid-line-v" style="right: 4rem;"></div>
+</div>
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-obsidian/10 h-24 flex items-center px-grid-margin">
+<div class="flex justify-between items-center w-full max-w-[1920px] mx-auto">
+<a class="font-display-lg text-headline-md tracking-[0.2em] text-primary" href="/">DISERA</a>
+<nav class="hidden md:flex items-center gap-12">
+<a class="font-label-sm text-label-sm text-primary border-b border-brushed-bronze pb-1" href="#">Proyectos</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-brushed-bronze transition-all duration-700 ease-in-out" href="#">Estudio</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-brushed-bronze transition-all duration-700 ease-in-out" href="#">Journal</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-brushed-bronze transition-all duration-700 ease-in-out" href="#">Contacto</a>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-48 pb-section-padding px-grid-margin max-w-[1920px] mx-auto">
+<!-- Hero Section -->
+<section class="mb-32">
+<div class="grid grid-cols-12 gap-grid-gutter items-end">
+<div class="col-span-12 md:col-span-8">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 uppercase">Portafolio</h1>
+<div class="grid-line-h mb-8"></div>
+<p class="font-body-lg text-body-lg max-w-2xl text-on-surface-variant">
+                        {{DATA:DOCUMENT:DOCUMENT_2}}
+                    </p>
+</div>
+<div class="hidden md:block col-span-4 text-right">
+<span class="font-technical-data text-technical-data text-brushed-bronze uppercase tracking-widest">Establecido — MMXXIV</span>
+</div>
+</div>
+</section>
+<!-- Minimalist Filter -->
+<nav class="mb-16">
+<div class="flex flex-wrap gap-8 items-center border-b border-obsidian/10 pb-6">
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-primary border-b border-primary pb-1 filter-transition hover:text-brushed-bronze">Todos</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant filter-transition hover:text-primary">Arquitectura</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant filter-transition hover:text-primary">Interiorismo</button>
+<button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant filter-transition hover:text-primary">Diseño de Producto</button>
+</div>
+</nav>
+<!-- Project Grid -->
+<div class="space-y-48">
+<!-- Project 1: Casa Travertino -->
+<article class="group relative">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-9 relative overflow-hidden image-zoom aspect-[16/9]">
+<img class="w-full h-full object-cover transition-transform duration-1000" data-alt="A monolithic architectural structure called Casa Travertino, featuring massive blocks of warm, porous travertine stone under a clear Mediterranean sky. The building has sharp, clean lines and large glass openings that reflect the surrounding sparse landscape. The lighting is high-contrast afternoon sun, creating deep shadows that emphasize the material texture. The scene is shot with a wide-angle lens to capture the scale and architectural permanence in a minimalist luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7SLlhIUVP19QTylNBBYSKITLq6-CCVuGZWBqo7NkQ-5JJAIXYxMysAv2rw1Xm40Pykuts5E_Dhnz_vzrUcFCgJqLkG4_VNciwrO4qaF1IwSGgVZPbVpdSMQCW_ePu5ohfuOeTDWIIXIXMk0ZQFXXSA7R4XnRWpHNhGyNTUP2lOpcqbaB8IFC9xeWagMHz7t3bI-SrjmEZBVDVzUBh6MVtrxoUg0aRaut3wqc4vvdoKb2zaTrvo3zYw8qzQ95DNlo5JC1fAZRCR0c"/>
+<div class="absolute inset-0 bg-obsidian/10 group-hover:bg-transparent transition-colors duration-700"></div>
+</div>
+<div class="col-span-12 md:col-span-3 flex flex-col justify-between pt-6 md:pt-0">
+<div>
+<div class="flex items-center gap-4 mb-4">
+<span class="font-technical-data text-technical-data uppercase tracking-tighter text-brushed-bronze">01 — Arquitectura</span>
+<div class="h-hairline flex-grow bg-brushed-bronze/30"></div>
+</div>
+<h2 class="font-headline-md text-headline-md mb-6">Casa Travertino</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                                Una exploración de la masa y el vacío. La piedra se convierte en luz a través de perforaciones rítmicas que definen la vida interior.
+                            </p>
+</div>
+<div class="border-t border-obsidian/10 pt-6">
+<div class="flex justify-between items-center group/btn">
+<span class="font-technical-data text-technical-data uppercase tracking-widest">Ver Detalles</span>
+<div class="w-10 h-10 border border-obsidian/20 flex items-center justify-center group-hover/btn:bg-brushed-bronze group-hover/btn:border-brushed-bronze transition-all duration-500">
+<span class="material-symbols-outlined group-hover/btn:text-travertine transition-colors">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 2: Ático Obsidiana -->
+<article class="group relative">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-start-4 md:col-span-9 order-1 md:order-2 relative overflow-hidden image-zoom aspect-[16/9]">
+<img class="w-full h-full object-cover transition-transform duration-1000" data-alt="An ultra-minimalist luxury penthouse interior titled Ático Obsidiana. The space is dominated by dark, polished obsidian stone floors and matte black cabinetry. Large floor-to-ceiling windows show a dimly lit twilight cityscape. Subtle warm accent lighting glows from hidden coves, reflecting off metallic surfaces. The atmosphere is quiet, intellectual, and sophisticated, with a single piece of sculptural furniture made of dark wood as a focal point." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7BODvTfXKQwAbI6XdqGDK_qJaqgDDEqt5m-FnqS02AQlq4xF63Oq1exAjUZywZW_0le1xUVOHszA62z2KQpFDjeJBAxIJfFTg73_5EHU9kRyJbS0RlsD9ABzB-Pnd6Ek7JPAZT0Dm6rl4K0bUlQmTB_eu55hQWam-Xv0PUOxhYPM199SfwPzO6eXuIC-nxK9_-yRO3o3juLv5id4NJ3Qc0yJsdVOPlHtCUq64znKgBqbZjVM7a-WFcUNzl_N-LKQDG-E-5Bnmryg"/>
+<div class="absolute inset-0 bg-obsidian/10 group-hover:bg-transparent transition-colors duration-700"></div>
+</div>
+<div class="col-span-12 md:col-span-3 order-2 md:order-1 flex flex-col justify-between pt-6 md:pt-0">
+<div>
+<div class="flex items-center gap-4 mb-4">
+<div class="h-hairline flex-grow bg-brushed-bronze/30"></div>
+<span class="font-technical-data text-technical-data uppercase tracking-tighter text-brushed-bronze">02 — Interiorismo</span>
+</div>
+<h2 class="font-headline-md text-headline-md mb-6">Ático Obsidiana</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                                El refugio urbano definitivo. Un ejercicio de supresión cromática donde la textura del material dicta la jerarquía del espacio.
+                            </p>
+</div>
+<div class="border-t border-obsidian/10 pt-6">
+<div class="flex justify-between items-center group/btn">
+<span class="font-technical-data text-technical-data uppercase tracking-widest">Ver Detalles</span>
+<div class="w-10 h-10 border border-obsidian/20 flex items-center justify-center group-hover/btn:bg-brushed-bronze group-hover/btn:border-brushed-bronze transition-all duration-500">
+<span class="material-symbols-outlined group-hover/btn:text-travertine transition-colors">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<!-- Project 3: Refugio Hueso -->
+<article class="group relative">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-7 relative overflow-hidden image-zoom aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-1000" data-alt="A small architectural cabin called Refugio Hueso located in a serene, mist-covered forest. The structure is made of bleached wood and off-white concrete, blending into the ethereal atmosphere. Soft, diffused morning light illuminates the minimalist exterior, which features a single oversized circular window. The overall aesthetic is peaceful, bone-like in its organic purity, and profoundly silent, embodying the philosophy of intellectual serenity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDymIDbZJBvz9pPfKH-gu-LEAbYJ1AX3qSdvIOd_hl1xVowM2JSDmg0Eryuq31iTLsm-XNS6v36IvrdAy0C5-HHv4cbk-soAhwz13_kyvmWABQKrfvHp2fsly7xXoqasF_4AEC-qDTNbBhfume6qQSAy1ThBDng9PItyHQZboG_IiE0TV70pMBBh61h8tqW92MoT7Odo1lGHBRSwHSegBU1z6tibQNuqj8_3ef3C5toNbDMDDxC7I9juCKt9e1Q5cV_uH0mWt_GXPE"/>
+<div class="absolute inset-0 bg-obsidian/10 group-hover:bg-transparent transition-colors duration-700"></div>
+</div>
+<div class="col-span-12 md:col-span-5 flex flex-col justify-center pl-0 md:pl-24 pt-6 md:pt-0">
+<div class="flex items-center gap-4 mb-4">
+<span class="font-technical-data text-technical-data uppercase tracking-tighter text-brushed-bronze">03 — Arquitectura</span>
+<div class="h-hairline w-24 bg-brushed-bronze/30"></div>
+</div>
+<h2 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-8">Refugio Hueso</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 leading-relaxed">
+                            Integración radical en el paisaje. Un refugio monocromático diseñado para el silencio y la introspección profunda.
+                        </p>
+<div class="max-w-xs">
+<table class="w-full font-technical-data text-technical-data uppercase tracking-widest mb-12">
+<tbody><tr class="border-b border-obsidian/10">
+<td class="py-3 text-on-surface-variant">Ubicación</td>
+<td class="py-3 text-right">Pirineos, ES</td>
+</tr>
+<tr class="border-b border-obsidian/10">
+<td class="py-3 text-on-surface-variant">Superficie</td>
+<td class="py-3 text-right">85 m²</td>
+</tr>
+<tr class="border-b border-obsidian/10">
+<td class="py-3 text-on-surface-variant">Año</td>
+<td class="py-3 text-right">2023</td>
+</tr>
+</tbody></table>
+<button class="w-full py-4 border border-obsidian text-label-sm font-label-sm uppercase tracking-widest hover:bg-brushed-bronze hover:border-brushed-bronze hover:text-travertine transition-all duration-700">Explorar Proyecto</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-background border-t border-obsidian/10">
+<div class="grid grid-cols-12 gap-grid-gutter px-grid-margin py-section-padding w-full max-w-[1920px] mx-auto">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<h3 class="font-display-lg text-headline-md tracking-widest text-primary mb-6">DISERA</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Material Honesty &amp; Intellectual Rigor. Arquitectura que perdura.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Estudio</h4>
+<ul class="space-y-4">
+<li><a class="font-technical-data text-technical-data uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Filosofía</a></li>
+<li><a class="font-technical-data text-technical-data uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Equipo</a></li>
+<li><a class="font-technical-data text-technical-data uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Premios</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Proyectos</h4>
+<ul class="space-y-4">
+<li><a class="font-technical-data text-technical-data uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Residencial</a></li>
+<li><a class="font-technical-data text-technical-data uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Cultural</a></li>
+<li><a class="font-technical-data text-technical-data uppercase text-on-surface-variant hover:text-primary transition-colors" href="#">Producto</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4 flex flex-col md:items-end justify-between">
+<div class="flex gap-8 mb-12 md:mb-0">
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+</div>
+<div class="text-left md:text-right">
+<p class="font-technical-data text-technical-data text-on-surface-variant">© 2024 DISERA Estudio de Arquitectura.</p>
+<p class="font-technical-data text-technical-data text-brushed-bronze mt-2">Intellectual Rigor.</p>
+</div>
+</div>
+</div>
+</footer>
+<!-- Interactive Layer: Progress Bar -->
+<div class="fixed top-0 left-0 h-[2px] bg-brushed-bronze z-[60] transition-all duration-300" id="scroll-progress" style="width: 0%"></div>
+<script>
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
+        });
+
+        // Hover Parallax Effect for Project Images
+        const projects = document.querySelectorAll('article');
+        projects.forEach(project => {
+            project.addEventListener('mousemove', (e) => {
+                const img = project.querySelector('img');
+                const rect = project.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                
+                img.style.transform = `scale(1.05) translate(${x * 20}px, ${y * 20}px)`;
+            });
+            
+            project.addEventListener('mouseleave', () => {
+                const img = project.querySelector('img');
+                img.style.transform = `scale(1) translate(0, 0)`;
+            });
+        });
+
+        // Slow fade-in of sections on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('translate-y-12');
+                }
+            });
+        }, observerOptions);
+
+        projects.forEach(project => {
+            project.classList.add('opacity-0', 'translate-y-12', 'transition-all', 'duration-1000', 'ease-out');
+            observer.observe(project);
+        });
+    </script>
+</body></html>

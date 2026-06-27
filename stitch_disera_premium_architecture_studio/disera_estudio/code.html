@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Estudio | DISERA</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "brushed-bronze": "#9E8060",
+                    "surface-container-high": "#ece8e1",
+                    "inverse-surface": "#31302c",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "secondary": "#74593c",
+                    "travertine": "#EAE6DF",
+                    "inverse-primary": "#c8c6c5",
+                    "primary-container": "#1c1b1b",
+                    "on-secondary-container": "#795e40",
+                    "surface-container-highest": "#e6e2db",
+                    "surface-container": "#f1ede6",
+                    "on-tertiary-fixed": "#141b2f",
+                    "on-surface": "#1c1c18",
+                    "on-background": "#1c1c18",
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary-container": "#7d839c",
+                    "error": "#ba1a1a",
+                    "shattered-plaster": "#8C92AC",
+                    "surface-variant": "#e6e2db",
+                    "on-secondary-fixed": "#2a1802",
+                    "surface-dim": "#dddad3",
+                    "surface-tint": "#5f5e5e",
+                    "obsidian": "#121212",
+                    "tertiary-container": "#141b2f",
+                    "on-surface-variant": "#444748",
+                    "tertiary-fixed": "#dce1fe",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#5a4227",
+                    "tertiary": "#000000",
+                    "background": "#fdf9f2",
+                    "secondary-fixed": "#ffddba",
+                    "primary": "#000000",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#40465d",
+                    "on-primary-fixed-variant": "#474646",
+                    "inverse-on-surface": "#f4f0e9",
+                    "surface-container-low": "#f7f3ec",
+                    "secondary-fixed-dim": "#e3c09d",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fdf9f2",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#747878",
+                    "on-primary-container": "#858383",
+                    "tertiary-fixed-dim": "#c0c5e1",
+                    "surface-bright": "#fdf9f2",
+                    "secondary-container": "#fed9b4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "mobile-margin": "1.5rem",
+                    "hairline": "1px",
+                    "grid-gutter": "2rem",
+                    "section-padding": "8rem",
+                    "grid-margin": "4rem"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Outfit"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Outfit"],
+                    "technical-data": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Outfit"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["48px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "300"}],
+                    "label-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.12em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "300"}],
+                    "technical-data": ["11px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "0.15em", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .grid-blueprint {
+            background-image: 
+                linear-gradient(to right, rgba(18, 18, 18, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(18, 18, 18, 0.05) 1px, transparent 1px);
+            background-size: calc(100% / 12) 100%;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .line-draw {
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.6, 0, 0.4, 1);
+        }
+        .line-draw.active {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-brushed-bronze selection:text-travertine overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-obsidian/10 h-24">
+<div class="flex justify-between items-center w-full px-grid-margin h-full max-w-[1920px] mx-auto">
+<a class="font-display-lg text-headline-md tracking-[0.2em] text-primary" href="/">DISERA</a>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-brushed-bronze transition-colors duration-500" href="#">Proyectos</a>
+<a class="font-label-sm text-label-sm text-primary border-b border-brushed-bronze pb-1" href="#">Estudio</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-brushed-bronze transition-colors duration-500" href="#">Journal</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-brushed-bronze transition-colors duration-500" href="#">Contacto</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Grid Wrapper -->
+<main class="pt-24 relative min-h-screen">
+<!-- Background Grid -->
+<div class="fixed inset-0 grid-blueprint pointer-events-none z-0"></div>
+<!-- Hero Section: Philosophy -->
+<section class="relative px-grid-margin py-section-padding min-h-[90vh] flex flex-col justify-center border-b border-obsidian/10">
+<div class="max-w-7xl mx-auto w-full grid grid-cols-12 gap-grid-gutter items-center">
+<div class="col-span-12 md:col-span-8 reveal-on-scroll">
+<span class="font-label-sm text-label-sm text-brushed-bronze uppercase mb-4 block">Filosofía &amp; Ethos</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight mb-12">
+                        El espacio no se decora;<br/>
+<span class="italic text-on-surface-variant">se comprende.</span>
+</h1>
+<div class="w-full h-hairline bg-obsidian/10 mb-12 overflow-hidden">
+<div class="line-draw h-full bg-brushed-bronze active"></div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 md:col-start-9 reveal-on-scroll" style="transition-delay: 200ms;">
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        {{DATA:DOCUMENT:DOCUMENT_2}}
+                    </p>
+</div>
+</div>
+</section>
+<!-- Visual Anchor: Conceptual Image -->
+<section class="px-grid-margin py-section-padding">
+<div class="max-w-[1920px] mx-auto">
+<div class="aspect-[21/9] w-full overflow-hidden reveal-on-scroll">
+<img alt="Architectural concept by DISERA featuring a monolithic concrete and travertine structure reflecting in a still pool during sunset, showcasing the harmony between built environment and nature." class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[2000ms] ease-out scale-105 hover:scale-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlp38ZJ8XFWdX3yswlETXrW5BspodD7L2-tEcNDL0SulMrctSTi_28-hMdBW91dAQR4U9RQwrYjYkHQHpD4asUIw2U3NgGvJCZU883tyQSJkL7daBk9by6YnmnyB1IUZyepIyxX9FZrcRUx_Tiz6lzwBnYMVkelL1gAsX7PCJ49w9VXOl9MIJefyjzx8gX2GFF5ggxUi_VUNfEnO1Ndzm1m89tGUX83rFYehgBEE_u8qKzIeg4VEkvNYZBQU1tSeRII15zGV7IwLE"/>
+</div>
+<div class="flex justify-between mt-6 reveal-on-scroll">
+<span class="font-technical-data text-technical-data text-on-surface-variant">IMAGE: CONCEPTUAL_03.RAW</span>
+<span class="font-technical-data text-technical-data text-on-surface-variant">LOC: MEDITERRANEAN BASIN</span>
+</div>
+</div>
+</section>
+<!-- Narrative: Origin and Method -->
+<section class="px-grid-margin py-section-padding border-t border-obsidian/10">
+<div class="max-w-7xl mx-auto grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-6 sticky top-32 h-fit reveal-on-scroll">
+<h2 class="font-headline-md text-headline-md mb-8">Del Territorio al Objeto</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+                        Nuestra metodología ignora las fronteras entre disciplinas. Entendemos la arquitectura como una respuesta física a una condición geográfica y humana previa.
+                    </p>
+</div>
+<div class="col-span-12 md:col-span-6 space-y-32 mt-12 md:mt-0">
+<!-- Method Step 1 -->
+<div class="reveal-on-scroll">
+<div class="flex items-baseline gap-4 mb-6">
+<span class="font-technical-data text-technical-data text-brushed-bronze">01</span>
+<h3 class="font-headline-md text-[24px] uppercase tracking-wider">Escala Territorial</h3>
+</div>
+<p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">
+                            Analizamos la orografía, la incidencia solar y el viento como materiales de construcción primarios. El edificio no se implanta, emerge del terreno.
+                        </p>
+<div class="mt-8 h-hairline bg-obsidian/10 w-full"></div>
+</div>
+<!-- Method Step 2 -->
+<div class="reveal-on-scroll">
+<div class="flex items-baseline gap-4 mb-6">
+<span class="font-technical-data text-technical-data text-brushed-bronze">02</span>
+<h3 class="font-headline-md text-[24px] uppercase tracking-wider">Honestidad Material</h3>
+</div>
+<p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">
+                            Trabajamos con materiales en su estado más puro. Travertino, hormigón visto y madera natural. La belleza reside en la imperfección controlada y el paso del tiempo.
+                        </p>
+<div class="mt-8 h-hairline bg-obsidian/10 w-full"></div>
+</div>
+<!-- Method Step 3 -->
+<div class="reveal-on-scroll">
+<div class="flex items-baseline gap-4 mb-6">
+<span class="font-technical-data text-technical-data text-brushed-bronze">03</span>
+<h3 class="font-headline-md text-[24px] uppercase tracking-wider">El Detalle y el Objeto</h3>
+</div>
+<p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">
+                            Diseñamos la manilla de la puerta con la misma intensidad que el masterplan. La arquitectura es una experiencia táctil que culmina en el objeto cotidiano.
+                        </p>
+<div class="mt-8 h-hairline bg-obsidian/10 w-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specification Table Style Section -->
+<section class="px-grid-margin py-section-padding bg-travertine/30 border-y border-obsidian/10">
+<div class="max-w-5xl mx-auto">
+<div class="mb-16 reveal-on-scroll">
+<span class="font-label-sm text-label-sm text-brushed-bronze block mb-4 uppercase">Data &amp; Rigor</span>
+<h2 class="font-headline-md text-headline-md">Parámetros del Estudio</h2>
+</div>
+<div class="space-y-0 divide-y divide-obsidian/10 border-y border-obsidian/10 reveal-on-scroll">
+<div class="grid grid-cols-12 py-8 group hover:bg-background transition-colors duration-500 px-4">
+<div class="col-span-4 font-technical-data text-technical-data uppercase text-on-surface-variant">Fundación</div>
+<div class="col-span-8 font-body-md text-body-md text-primary">MMXXII — Basados en la herencia constructiva mediterránea.</div>
+</div>
+<div class="grid grid-cols-12 py-8 group hover:bg-background transition-colors duration-500 px-4">
+<div class="col-span-4 font-technical-data text-technical-data uppercase text-on-surface-variant">Especialidad</div>
+<div class="col-span-8 font-body-md text-body-md text-primary">Residencial de alto formato &amp; Urbanismo regenerativo.</div>
+</div>
+<div class="grid grid-cols-12 py-8 group hover:bg-background transition-colors duration-500 px-4">
+<div class="col-span-4 font-technical-data text-technical-data uppercase text-on-surface-variant">Materiales Base</div>
+<div class="col-span-8 font-body-md text-body-md text-primary">Travertino Plata, Hormigón HA-30, Acero Corten, Vidrio Estructural.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Call to Action -->
+<section class="px-grid-margin py-section-padding text-center">
+<div class="reveal-on-scroll">
+<h3 class="font-display-lg text-[40px] mb-12">Hablemos de su próximo espacio.</h3>
+<a class="inline-block px-12 py-4 border border-obsidian font-label-sm text-label-sm uppercase tracking-widest hover:bg-brushed-bronze hover:text-travertine transition-all duration-700 ease-in-out" href="#">
+                    Contactar Estudio
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background border-t border-obsidian/10">
+<div class="grid grid-cols-12 gap-grid-gutter px-grid-margin py-section-padding w-full max-w-[1920px] mx-auto">
+<div class="col-span-12 md:col-span-4">
+<div class="font-display-lg text-headline-md tracking-widest text-primary mb-8">DISERA</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    Arquitectura que trasciende la función para convertirse en atmósfera.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-2 md:col-start-7">
+<h4 class="font-label-sm text-label-sm text-primary mb-6 uppercase">Explorar</h4>
+<ul class="space-y-4">
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors" href="#">PROYECTOS</a></li>
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors" href="#">JOURNAL</a></li>
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors" href="#">EQUIPO</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-sm text-label-sm text-primary mb-6 uppercase">Social</h4>
+<ul class="space-y-4">
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors" href="#">INSTAGRAM</a></li>
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors" href="#">LINKEDIN</a></li>
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors" href="#">PINTEREST</a></li>
+</ul>
+</div>
+<div class="col-span-12 mt-16 flex flex-col md:flex-row justify-between border-t border-obsidian/5 pt-8">
+<span class="font-technical-data text-technical-data text-on-surface-variant">© 2024 DISERA Estudio de Arquitectura. Material Honesty &amp; Intellectual Rigor.</span>
+<div class="flex gap-8 mt-4 md:mt-0">
+<a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary" href="#">LEGAL</a>
+<a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary" href="#">PRIVACIDAD</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple reveal-on-scroll logic
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    // Find any line-draw children
+                    const lines = entry.target.querySelectorAll('.line-draw');
+                    lines.forEach(line => line.classList.add('active'));
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+
+        // Smooth scroll implementation for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

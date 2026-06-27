@@ -1,0 +1,146 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Estudio | DISERA">
+  <Header />
+
+  <main class="relative z-10 grid-blueprint min-h-screen">
+    <!-- Intro Section -->
+    <section class="pt-48 pb-24 px-mobile-margin md:px-grid-margin max-w-[1920px] mx-auto">
+      <div class="grid grid-cols-12 gap-grid-gutter items-end">
+        <div class="col-span-12 md:col-span-8 reveal-on-scroll">
+          <span class="font-label-sm text-label-sm text-brushed-bronze block mb-6 tracking-widest uppercase">FILOSOFÍA & ETHOS</span>
+          <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight mb-12 uppercase">
+            El espacio no se decora;<br/>
+            <span class="italic text-on-surface-variant">se comprende.</span>
+          </h1>
+          <div class="w-full h-hairline bg-obsidian/10 mb-12 overflow-hidden">
+            <div class="line-draw h-full bg-brushed-bronze active"></div>
+          </div>
+        </div>
+        
+        <div class="col-span-12 md:col-span-4 md:col-start-9 reveal-on-scroll" style="transition-delay: 200ms;">
+          <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            De la raíz latina <em>discere</em> —estudiar, aprender— nace DISERA. Un proceso riguroso donde la investigación histórica y el análisis de la materia preceden al primer trazo en el plano.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Anchor: Conceptual Image -->
+    <section class="px-mobile-margin md:px-grid-margin py-12">
+      <div class="max-w-[1920px] mx-auto">
+        <div class="aspect-[21/9] w-full overflow-hidden reveal-on-scroll">
+          <img 
+            alt="Architectural concept by DISERA featuring a monolithic concrete and travertine structure reflecting in a still pool" 
+            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[2000ms] ease-out scale-105 hover:scale-100" 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlp38ZJ8XFWdX3yswlETXrW5BspodD7L2-tEcNDL0SulMrctSTi_28-hMdBW91dAQR4U9RQwrYjYkHQHpD4asUIw2U3NgGvJCZU883tyQSJkL7daBk9by6YnmnyB1IUZyepIyxX9FZrcRUx_Tiz6lzwBnYMVkelL1gAsX7PCJ49w9VXOl9MIJefyjzx8gX2GFF5ggxUi_VUNfEnO1Ndzm1m89tGUX83rFYehgBEE_u8qKzIeg4VEkvNYZBQU1tSeRII15zGV7IwLE"
+          />
+        </div>
+        <div class="flex justify-between mt-6 reveal-on-scroll">
+          <span class="font-technical-data text-technical-data text-on-surface-variant">IMAGE: CONCEPTUAL_03.RAW</span>
+          <span class="font-technical-data text-technical-data text-on-surface-variant">LOC: MEDITERRANEAN BASIN</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Narrative: Origin and Method -->
+    <section class="px-mobile-margin md:px-grid-margin py-section-padding border-t border-obsidian/10">
+      <div class="max-w-7xl mx-auto grid grid-cols-12 gap-grid-gutter">
+        <div class="col-span-12 md:col-span-6 md:sticky md:top-32 h-fit reveal-on-scroll">
+          <h2 class="font-headline-md text-headline-md mb-8 uppercase">Del Territorio al Objeto</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            Nuestra metodología ignora las fronteras entre disciplinas. Entendemos la arquitectura como una respuesta física a una condición geográfica y humana previa.
+          </p>
+        </div>
+        
+        <div class="col-span-12 md:col-span-6 space-y-32 mt-12 md:mt-0">
+          <!-- Method Step 1 -->
+          <div class="reveal-on-scroll">
+            <div class="flex items-baseline gap-4 mb-6">
+              <span class="font-technical-data text-technical-data text-brushed-bronze">01</span>
+              <h3 class="font-headline-md text-[24px] uppercase tracking-wider">Escala Territorial</h3>
+            </div>
+            <p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">
+              Analizamos la orografía, la incidencia solar y el viento como materiales de construcción primarios. El edificio no se implanta, emerge del terreno.
+            </p>
+            <div class="mt-8 h-hairline bg-obsidian/10 w-full"></div>
+          </div>
+          
+          <!-- Method Step 2 -->
+          <div class="reveal-on-scroll">
+            <div class="flex items-baseline gap-4 mb-6">
+              <span class="font-technical-data text-technical-data text-brushed-bronze">02</span>
+              <h3 class="font-headline-md text-[24px] uppercase tracking-wider">Honestidad Material</h3>
+            </div>
+            <p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">
+              Trabajamos con materiales en su estado más puro. Travertino, hormigón visto y madera natural. La belleza reside en la imperfección controlada y el paso del tiempo.
+            </p>
+            <div class="mt-8 h-hairline bg-obsidian/10 w-full"></div>
+          </div>
+          
+          <!-- Method Step 3 -->
+          <div class="reveal-on-scroll">
+            <div class="flex items-baseline gap-4 mb-6">
+              <span class="font-technical-data text-technical-data text-brushed-bronze">03</span>
+              <h3 class="font-headline-md text-[24px] uppercase tracking-wider">El Detalle y el Objeto</h3>
+            </div>
+            <p class="font-body-md text-body-md leading-relaxed text-on-surface-variant">
+              Diseñamos la manilla de la puerta con la misma intensidad que el masterplan. La arquitectura es una experiencia táctil que culmina en el objeto cotidiano.
+            </p>
+            <div class="mt-8 h-hairline bg-obsidian/10 w-full"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Specification Table Style Section -->
+    <section class="px-mobile-margin md:px-grid-margin py-section-padding bg-travertine/30 border-y border-obsidian/10">
+      <div class="max-w-5xl mx-auto">
+        <div class="mb-16 reveal-on-scroll">
+          <span class="font-label-sm text-label-sm text-brushed-bronze block mb-4 uppercase">Data & Rigor</span>
+          <h2 class="font-headline-md text-headline-md uppercase">Parámetros del Estudio</h2>
+        </div>
+        
+        <div class="space-y-0 divide-y divide-obsidian/10 border-y border-obsidian/10 reveal-on-scroll">
+          <div class="grid grid-cols-12 py-8 group hover:bg-background transition-colors duration-500 px-4">
+            <div class="col-span-4 font-technical-data text-technical-data uppercase text-on-surface-variant">Fundación</div>
+            <div class="col-span-8 font-body-md text-body-md text-primary">MMXXII — Basados en la herencia constructiva mediterránea.</div>
+          </div>
+          <div class="grid grid-cols-12 py-8 group hover:bg-background transition-colors duration-500 px-4">
+            <div class="col-span-4 font-technical-data text-technical-data uppercase text-on-surface-variant">Especialidad</div>
+            <div class="col-span-8 font-body-md text-body-md text-primary">Residencial de alto formato & Urbanismo regenerativo.</div>
+          </div>
+          <div class="grid grid-cols-12 py-8 group hover:bg-background transition-colors duration-500 px-4">
+            <div class="col-span-4 font-technical-data text-technical-data uppercase text-on-surface-variant">Materiales Base</div>
+            <div class="col-span-8 font-body-md text-body-md text-primary">Travertino Plata, Hormigón HA-30, Acero Corten, Vidrio Estructural.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Call to Action -->
+    <section class="px-mobile-margin md:px-grid-margin py-section-padding text-center">
+      <div class="reveal-on-scroll">
+        <h3 class="font-display-lg text-[40px] mb-12 uppercase">Hablemos de su próximo espacio.</h3>
+        <a class="inline-block px-12 py-4 border border-obsidian font-label-sm text-label-sm uppercase tracking-widest hover:bg-brushed-bronze hover:text-travertine transition-all duration-700 ease-in-out" href="/contacto">
+          Contactar Estudio
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .grid-blueprint {
+    background-image: 
+      linear-gradient(to right, rgba(18, 18, 18, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(18, 18, 18, 0.05) 1px, transparent 1px);
+    background-size: calc(100% / 12) 100px;
+  }
+</style>

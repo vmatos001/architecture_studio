@@ -1,0 +1,92 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.replace(/\/$/, "");
+
+const links = [
+  { name: "Proyectos", href: "/proyectos" },
+  { name: "Estudio", href: "/estudio" },
+  { name: "Journal", href: "/journal" },
+  { name: "Contacto", href: "/contacto" }
+];
+---
+
+<header class="fixed top-0 left-0 w-full z-[60] bg-background/80 backdrop-blur-xl border-b border-obsidian/10 h-24 flex items-center px-mobile-margin md:px-grid-margin">
+  <div class="flex justify-between items-center w-full max-w-[1920px] mx-auto">
+    <a class="font-display-lg text-headline-md tracking-[0.2em] text-primary" href="/">DISERA</a>
+    
+    <nav class="hidden md:flex items-center gap-12">
+      {links.map(link => {
+        const isActive = currentPath === link.href;
+        return (
+          <a 
+            class={`font-label-sm text-label-sm transition-all duration-700 ease-in-out ${
+              isActive 
+                ? "text-primary border-b border-brushed-bronze pb-1" 
+                : "text-on-surface-variant hover:text-brushed-bronze"
+            }`} 
+            href={link.href}
+          >
+            {link.name}
+          </a>
+        );
+      })}
+    </nav>
+    
+    <button class="md:hidden text-primary" id="mobileMenuBtn" aria-label="Abrir menú">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 bg-background/95 backdrop-blur-2xl z-[70] flex flex-col justify-center px-mobile-margin transition-all duration-700 ease-in-out opacity-0 pointer-events-none translate-y-4" id="mobileMenu">
+  <div class="absolute top-0 left-0 w-full h-24 flex items-center justify-between px-mobile-margin border-b border-obsidian/10">
+    <a class="font-display-lg text-headline-md tracking-[0.2em] text-primary" href="/">DISERA</a>
+    <button class="text-primary" id="closeMenuBtn" aria-label="Cerrar menú">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+  </div>
+  
+  <nav class="flex flex-col gap-8 text-left mt-24">
+    {links.map(link => {
+      const isActive = currentPath === link.href;
+      return (
+        <a 
+          class={`font-display-lg text-display-lg-mobile tracking-[0.1em] transition-all duration-500 ${
+            isActive 
+              ? "text-brushed-bronze" 
+              : "text-primary hover:text-brushed-bronze"
+          }`} 
+          href={link.href}
+        >
+          {link.name}
+        </a>
+      );
+    })}
+  </nav>
+  
+  <div class="mt-auto mb-12 border-t border-obsidian/10 pt-8 flex justify-between">
+    <span class="font-technical-data text-technical-data text-on-surface-variant">© 2024 DISERA</span>
+    <span class="font-technical-data text-technical-data text-primary">Madrid / Paris / Tokyo</span>
+  </div>
+</div>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const closeMenuBtn = document.getElementById('closeMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (mobileMenuBtn && closeMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+      mobileMenu.classList.add('opacity-100', 'translate-y-0');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+      mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+      document.body.style.overflow = '';
+    });
+  }
+</script>

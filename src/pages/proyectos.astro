@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Portafolio | DISERA">
+  <Header />
+  
+  <!-- Background Grid Lines (12 Columns Desktop) -->
+  <div class="hidden md:block">
+    <div class="grid-line-v" style="left: 4rem;"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 1/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 2/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 3/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 4/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 5/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 6/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 7/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 8/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 9/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 10/12);"></div>
+    <div class="grid-line-v" style="left: calc(4rem + (100% - 8rem) * 11/12);"></div>
+    <div class="grid-line-v" style="right: 4rem;"></div>
+  </div>
+
+  <main class="pt-48 pb-section-padding px-mobile-margin md:px-grid-margin max-w-[1920px] mx-auto">
+    <!-- Hero Section -->
+    <section class="mb-32">
+      <div class="grid grid-cols-12 gap-grid-gutter items-end">
+        <div class="col-span-12 md:col-span-8">
+          <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-8 uppercase">Portafolio</h1>
+          <div class="h-hairline bg-obsidian/10 mb-8 w-full"></div>
+          <p class="font-body-lg text-body-lg max-w-2xl text-on-surface-variant">
+            Obras seleccionadas. La materialización de una idea en el paisaje. Un recorrido por nuestra búsqueda de permanencia, honestidad material y contención formal.
+          </p>
+        </div>
+        <div class="hidden md:block col-span-4 text-right">
+          <span class="font-technical-data text-technical-data text-brushed-bronze uppercase tracking-widest">Establecido — MMXXIV</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Minimalist Filter -->
+    <nav class="mb-16">
+      <div class="flex flex-wrap gap-8 items-center border-b border-obsidian/10 pb-6">
+        <button class="font-label-sm text-label-sm uppercase tracking-widest text-primary border-b border-primary pb-1 filter-transition hover:text-brushed-bronze">Todos</button>
+        <button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant filter-transition hover:text-primary">Arquitectura</button>
+        <button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant filter-transition hover:text-primary">Interiorismo</button>
+        <button class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant filter-transition hover:text-primary">Diseño de Producto</button>
+      </div>
+    </nav>
+
+    <!-- Project Grid -->
+    <div class="space-y-48">
+      <!-- Project 1: Casa Travertino -->
+      <article class="group relative">
+        <div class="grid grid-cols-12 gap-grid-gutter">
+          <div class="col-span-12 md:col-span-9 relative overflow-hidden image-zoom aspect-[16/9]">
+            <img 
+              class="w-full h-full object-cover transition-transform duration-1000" 
+              alt="Casa Travertino" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7SLlhIUVP19QTylNBBYSKITLq6-CCVuGZWBqo7NkQ-5JJAIXYxMysAv2rw1Xm40Pykuts5E_Dhnz_vzrUcFCgJqLkG4_VNciwrO4qaF1IwSGgVZPbVpdSMQCW_ePu5ohfuOeTDWIIXIXMk0ZQFXXSA7R4XnRWpHNhGyNTUP2lOpcqbaB8IFC9xeWagMHz7t3bI-SrjmEZBVDVzUBh6MVtrxoUg0aRaut3wqc4vvdoKb2zaTrvo3zYw8qzQ95DNlo5JC1fAZRCR0c"
+            />
+            <div class="absolute inset-0 bg-obsidian/10 group-hover:bg-transparent transition-colors duration-700"></div>
+          </div>
+          
+          <div class="col-span-12 md:col-span-3 flex flex-col justify-between pt-6 md:pt-0">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <span class="font-technical-data text-technical-data uppercase tracking-tighter text-brushed-bronze">01 — Arquitectura</span>
+                <div class="h-hairline flex-grow bg-brushed-bronze/30"></div>
+              </div>
+              <h2 class="font-headline-md text-headline-md mb-6">Casa Travertino</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                Una estructura monolítica de piedra local esculpida por la luz del Mediterráneo. Una exploración de la masa y el vacío donde la piedra se convierte en luz a través de la contención.
+              </p>
+            </div>
+            
+            <div class="border-t border-obsidian/10 pt-6">
+              <div class="flex justify-between items-center group/btn">
+                <span class="font-technical-data text-technical-data uppercase tracking-widest">Ver Detalles</span>
+                <div class="w-10 h-10 border border-obsidian/20 flex items-center justify-center group-hover/btn:bg-brushed-bronze group-hover/btn:border-brushed-bronze transition-all duration-500">
+                  <span class="material-symbols-outlined group-hover/btn:text-travertine transition-colors">arrow_outward</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: Ático Obsidiana -->
+      <article class="group relative">
+        <div class="grid grid-cols-12 gap-grid-gutter">
+          <div class="col-span-12 md:col-span-3 order-2 md:order-1 flex flex-col justify-between pt-6 md:pt-0">
+            <div>
+              <div class="flex items-center gap-4 mb-4">
+                <div class="h-hairline flex-grow bg-brushed-bronze/30"></div>
+                <span class="font-technical-data text-technical-data uppercase tracking-tighter text-brushed-bronze">02 — Interiorismo</span>
+              </div>
+              <h2 class="font-headline-md text-headline-md mb-6">Ático Obsidiana</h2>
+              <p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                Un ejercicio de geometría pura y texturas oscuras frente al perfil urbano. El refugio urbano definitivo donde la textura del material dicta la jerarquía del espacio.
+              </p>
+            </div>
+            
+            <div class="border-t border-obsidian/10 pt-6">
+              <div class="flex justify-between items-center group/btn">
+                <span class="font-technical-data text-technical-data uppercase tracking-widest">Ver Detalles</span>
+                <div class="w-10 h-10 border border-obsidian/20 flex items-center justify-center group-hover/btn:bg-brushed-bronze group-hover/btn:border-brushed-bronze transition-all duration-500">
+                  <span class="material-symbols-outlined group-hover/btn:text-travertine transition-colors">arrow_outward</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-span-12 md:col-start-4 md:col-span-9 order-1 md:order-2 relative overflow-hidden image-zoom aspect-[16/9]">
+            <img 
+              class="w-full h-full object-cover transition-transform duration-1000" 
+              alt="Ático Obsidiana" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7BODvTfXKQwAbI6XdqGDK_qJaqgDDEqt5m-FnqS02AQlq4xF63Oq1exAjUZywZW_0le1xUVOHszA62z2KQpFDjeJBAxIJfFTg73_5EHU9kRyJbS0RlsD9ABzB-Pnd6Ek7JPAZT0Dm6rl4K0bUlQmTB_eu55hQWam-Xv0PUOxhYPM199SfwPzO6eXuIC-nxK9_-yRO3o3juLv5id4NJ3Qc0yJsdVOPlHtCUq64znKgBqbZjVM7a-WFcUNzl_N-LKQDG-E-5Bnmryg"
+            />
+            <div class="absolute inset-0 bg-obsidian/10 group-hover:bg-transparent transition-colors duration-700"></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: Refugio Hueso -->
+      <article class="group relative">
+        <div class="grid grid-cols-12 gap-grid-gutter">
+          <div class="col-span-12 md:col-span-7 relative overflow-hidden image-zoom aspect-[4/5]">
+            <img 
+              class="w-full h-full object-cover transition-transform duration-1000" 
+              alt="Refugio Hueso" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDymIDbZJBvz9pPfKH-gu-LEAbYJ1AX3qSdvIOd_hl1xVowM2JSDmg0Eryuq31iTLsm-XNS6v36IvrdAy0C5-HHv4cbk-soAhwz13_kyvmWABQKrfvHp2fsly7xXoqasF_4AEC-qDTNbBhfume6qQSAy1ThBDng9PItyHQZboG_IiE0TV70pMBBh61h8tqW92MoT7Odo1lGHBRSwHSegBU1z6tibQNuqj8_3ef3C5toNbDMDDxC7I9juCKt9e1Q5cV_uH0mWt_GXPE"
+            />
+            <div class="absolute inset-0 bg-obsidian/10 group-hover:bg-transparent transition-colors duration-700"></div>
+          </div>
+          
+          <div class="col-span-12 md:col-span-5 flex flex-col justify-center pl-0 md:pl-24 pt-6 md:pt-0">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="font-technical-data text-technical-data uppercase tracking-tighter text-brushed-bronze">03 — Arquitectura</span>
+              <div class="h-hairline w-24 bg-brushed-bronze/30"></div>
+            </div>
+            <h2 class="font-display-lg text-display-lg-mobile md:text-headline-md mb-8">Refugio Hueso</h2>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 leading-relaxed">
+              Tres pabellones de hormigón lavado integrados en el silencio del bosque. Un refugio monocromático diseñado para el silencio y la introspección profunda.
+            </p>
+            
+            <div class="max-w-xs">
+              <table class="w-full font-technical-data text-technical-data uppercase tracking-widest mb-12">
+                <tbody>
+                  <tr class="border-b border-obsidian/10">
+                    <td class="py-3 text-on-surface-variant text-left">Ubicación</td>
+                    <td class="py-3 text-right">Sintra, Portugal</td>
+                  </tr>
+                  <tr class="border-b border-obsidian/10">
+                    <td class="py-3 text-on-surface-variant text-left">Superficie</td>
+                    <td class="py-3 text-right">480 m²</td>
+                  </tr>
+                  <tr class="border-b border-obsidian/10">
+                    <td class="py-3 text-on-surface-variant text-left">Año</td>
+                    <td class="py-3 text-right">2023</td>
+                  </tr>
+                </tbody>
+              </table>
+              <button class="w-full py-4 border border-obsidian text-label-sm font-label-sm uppercase tracking-widest hover:bg-brushed-bronze hover:border-brushed-bronze hover:text-travertine transition-all duration-700">Explorar Proyecto</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .grid-line-v {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: rgba(18, 18, 18, 0.05);
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  // Hover Parallax Effect for Project Images
+  const projects = document.querySelectorAll('article');
+  projects.forEach(project => {
+    project.addEventListener('mousemove', (e) => {
+      const mouseEvent = e as MouseEvent;
+      const img = project.querySelector('img');
+      if (!img) return;
+      const rect = project.getBoundingClientRect();
+      const x = (mouseEvent.clientX - rect.left) / rect.width - 0.5;
+      const y = (mouseEvent.clientY - rect.top) / rect.height - 0.5;
+      
+      img.style.transform = `scale(1.05) translate(${x * 20}px, ${y * 20}px)`;
+    });
+    
+    project.addEventListener('mouseleave', () => {
+      const img = project.querySelector('img');
+      if (img) {
+        img.style.transform = `scale(1) translate(0, 0)`;
+      }
+    });
+  });
+</script>

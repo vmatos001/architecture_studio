@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contacto | DISERA Estudio de Arquitectura</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e6e2db",
+                        "surface-container-low": "#f7f3ec",
+                        "surface-tint": "#5f5e5e",
+                        "on-secondary-container": "#795e40",
+                        "error-container": "#ffdad6",
+                        "travertine": "#EAE6DF",
+                        "background": "#fdf9f2",
+                        "on-tertiary-fixed-variant": "#40465d",
+                        "tertiary": "#000000",
+                        "on-secondary-fixed-variant": "#5a4227",
+                        "on-background": "#1c1c18",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f1ede6",
+                        "inverse-surface": "#31302c",
+                        "surface-variant": "#e6e2db",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#fed9b4",
+                        "on-tertiary-fixed": "#141b2f",
+                        "on-secondary-fixed": "#2a1802",
+                        "surface": "#fdf9f2",
+                        "inverse-primary": "#c8c6c5",
+                        "tertiary-fixed": "#dce1fe",
+                        "on-surface-variant": "#444748",
+                        "secondary": "#74593c",
+                        "primary-fixed": "#e5e2e1",
+                        "outline-variant": "#c4c7c7",
+                        "on-primary-fixed": "#1c1b1b",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed-variant": "#474646",
+                        "tertiary-fixed-dim": "#c0c5e1",
+                        "surface-bright": "#fdf9f2",
+                        "shattered-plaster": "#8C92AC",
+                        "tertiary-container": "#141b2f",
+                        "on-primary-container": "#858383",
+                        "outline": "#747878",
+                        "primary": "#000000",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1c1c18",
+                        "brushed-bronze": "#9E8060",
+                        "inverse-on-surface": "#f4f0e9",
+                        "surface-dim": "#dddad3",
+                        "surface-container-high": "#ece8e1",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "primary-container": "#1c1b1b",
+                        "on-tertiary-container": "#7d839c",
+                        "obsidian": "#121212",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#e3c09d",
+                        "secondary-fixed": "#ffddba"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "hairline": "1px",
+                        "section-padding": "8rem",
+                        "grid-gutter": "2rem",
+                        "mobile-margin": "1.5rem",
+                        "grid-margin": "4rem"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Outfit"],
+                        "body-lg": ["Inter"],
+                        "technical-data": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "display-lg": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["48px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "300"}],
+                        "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "technical-data": ["11px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.12em", "fontWeight": "500"}],
+                        "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "0.15em", "fontWeight": "300"}],
+                        "headline-md": ["32px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "300"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #EAE6DF; /* Travertine base for the canvas */
+            color: #121212;
+            overflow-x: hidden;
+        }
+
+        .blueprint-grid {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background-image: 
+                linear-gradient(to right, rgba(18, 18, 18, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(18, 18, 18, 0.05) 1px, transparent 1px);
+            background-size: calc((100% - 2 * 4rem) / 12 + 2px) 100%, 100% 128px;
+            background-position: 4rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .blueprint-grid {
+                background-size: calc((100% - 2 * 1.5rem) / 4 + 1px) 100%;
+                background-position: 1.5rem 0;
+            }
+        }
+
+        .form-underline {
+            position: relative;
+        }
+        .form-underline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(18, 18, 18, 0.2);
+            transition: background-color 0.5s ease;
+        }
+        .form-underline:focus-within::after {
+            background-color: #9E8060;
+        }
+
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+        }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-brushed-bronze selection:text-white">
+<!-- Technical Grid Layer -->
+<div class="blueprint-grid"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-obsidian/10 h-24 flex justify-center">
+<div class="flex justify-between items-center w-full px-grid-margin max-w-[1920px]">
+<div class="font-display-lg text-headline-md tracking-[0.2em] text-primary">
+                DISERA
+            </div>
+<div class="hidden md:flex space-x-12">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-brushed-bronze transition-all duration-700" href="#">Proyectos</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-brushed-bronze transition-all duration-700" href="#">Estudio</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-brushed-bronze transition-all duration-700" href="#">Journal</a>
+<a class="font-label-sm text-label-sm text-primary border-b border-brushed-bronze pb-1" href="#">Contacto</a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</div>
+</div>
+</nav>
+<main class="relative z-10 pt-48 pb-section-padding">
+<div class="max-w-[1920px] mx-auto px-grid-margin">
+<!-- Header Section -->
+<header class="grid grid-cols-12 gap-grid-gutter mb-24">
+<div class="col-span-12 md:col-span-8 lg:col-span-6 fade-up" id="header-text">
+<h1 class="font-display-lg text-headline-md md:text-display-lg text-primary mb-8 leading-tight">
+                        Hablemos de su próximo espacio.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Cada obra memorable comienza con una conversación en torno a la materia y el lugar. 
+                        Entendemos la arquitectura como un compromiso entre la aspiración y la realidad constructiva.
+                    </p>
+</div>
+<div class="col-span-12 md:col-span-4 lg:col-start-9 lg:col-span-4 flex flex-col justify-end fade-up" style="transition-delay: 200ms;">
+<div class="border-l border-obsidian/10 pl-8 py-4">
+<span class="font-technical-data text-technical-data uppercase tracking-widest text-on-surface-variant mb-2 block">Sedes</span>
+<p class="font-body-md text-body-md mb-1">Madrid — Barcelona</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Calle de la Materia 12, 28001</p>
+</div>
+</div>
+</header>
+<!-- Contact Form Section -->
+<section class="grid grid-cols-12 gap-grid-gutter pt-12 border-t border-obsidian/10">
+<div class="col-span-12 md:col-span-3 mb-12 md:mb-0">
+<span class="font-technical-data text-technical-data uppercase tracking-widest text-brushed-bronze block mb-4">Información del encargo</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant pr-8">
+                        Por favor, complete los campos detallados a continuación. Nuestro equipo de diseño revisará su propuesta y se pondrá en contacto en un plazo de 48 horas.
+                    </p>
+</div>
+<div class="col-span-12 md:col-span-9 lg:col-span-8 lg:col-start-5">
+<form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 fade-up" style="transition-delay: 400ms;">
+<!-- Nombre -->
+<div class="form-underline group">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Nombre y apellidos</label>
+<input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary" placeholder="Ej. Sophia Al-Mansour" type="text"/>
+</div>
+<!-- Email -->
+<div class="form-underline group">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Correo electrónico corporativo o privado</label>
+<input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary" placeholder="contacto@dominio.com" type="email"/>
+</div>
+<!-- Teléfono -->
+<div class="form-underline group">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Teléfono de contacto</label>
+<input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary" placeholder="+34 600 000 000" type="tel"/>
+</div>
+<!-- Ubicación -->
+<div class="form-underline group">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Ubicación del emplazamiento</label>
+<input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary" placeholder="Ej. Mallorca, España / Ginebra, Suiza" type="text"/>
+</div>
+<!-- Tipo de encargo -->
+<div class="form-underline group">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Tipo de encargo</label>
+<div class="relative">
+<select class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg text-primary appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Seleccione una categoría</option>
+<option>Residencia unifamiliar</option>
+<option>Ático urbano / Reforma integral</option>
+<option>Espacio comercial o expositivo</option>
+<option>Diseño de colección / Producto a medida</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 bottom-2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Presupuesto -->
+<div class="form-underline group">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Presupuesto estimado de ejecución</label>
+<div class="relative">
+<select class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg text-primary appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Rango de inversión</option>
+<option>500.000 € – 1.000.000 €</option>
+<option>1.000.000 € – 2.500.000 €</option>
+<option>Más de 2.500.000 €</option>
+<option>Confidencial / A determinar</option>
+</select>
+<span class="material-symbols-outlined absolute right-0 bottom-2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Visión del Proyecto -->
+<div class="md:col-span-2 form-underline group">
+<label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Visión del Proyecto</label>
+<textarea class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary resize-none" placeholder="Háblenos de la escala del proyecto, el terreno y las intenciones de su propuesta..." rows="4"></textarea>
+</div>
+<!-- CTA -->
+<div class="md:col-span-2 pt-12">
+<button class="group relative flex items-center justify-center border border-obsidian px-12 py-6 overflow-hidden transition-all duration-700 ease-in-out hover:text-travertine" type="submit">
+<div class="absolute inset-0 bg-brushed-bronze translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out -z-10"></div>
+<span class="font-label-sm text-label-sm uppercase tracking-[0.2em] relative z-10">Iniciar conversación</span>
+<span class="material-symbols-outlined ml-4 relative z-10 transition-transform group-hover:translate-x-2">arrow_right_alt</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Decorative Image / Map Placeholder -->
+<section class="grid grid-cols-12 gap-grid-gutter mt-32">
+<div class="col-span-12 h-[512px] relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 fade-up" style="transition-delay: 600ms;">
+<div class="w-full h-full bg-cover bg-center" data-alt="A sprawling architectural complex with sharp monolithic concrete structures reflecting in a mirror-like swimming pool under a soft, golden-hour sunset. The scene is incredibly minimalist, prioritizing negative space and geometric precision. The lighting is low-contrast and atmospheric, highlighting the rich textures of the travertine and concrete surfaces against a pristine landscape of dry grasses and olive trees." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBd1DNWvvwIm_ublHbpjgGfIyWsTpuLnX9PGG9aTNAzbjRCBN9pl-ruHbhyRLsIdrwUHeccamEjYkcNnf-dXHWchLtloLSRdt9nE9ICi6kpV64cvuoiBQSMnABkAl35V8I2mmS7d05Jo8zftijP4lbTvRbPiL_jfhHlK3xHSdbYDSQknqpOoNl3aW7YnEmnQIfIxkHdByZpPnGb5Hhw6oq9AKTF12zHgCqfzXlpiJydrAq0SuKe3ePfcrcAVRTdrCbjvsJAejuyOTI')"></div>
+<div class="absolute inset-0 bg-obsidian/10"></div>
+<div class="absolute bottom-8 left-8 bg-background/90 backdrop-blur-md px-6 py-4 border border-obsidian/5">
+<span class="font-technical-data text-technical-data block uppercase mb-1">Localización de Estudio</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">40°24'59.4"N 3°41'16.1"W</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-background border-t border-obsidian/10 w-full">
+<div class="max-w-[1920px] mx-auto px-grid-margin py-section-padding grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 lg:col-span-4 mb-12 lg:mb-0">
+<div class="font-display-lg text-headline-md tracking-widest text-primary mb-6">DISERA</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                    Estudio de Arquitectura e Interiorismo dedicado a la creación de espacios trascendentales a través de la honestidad material.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-3 lg:col-span-2">
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Navegación</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Proyectos</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Estudio</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Journal</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-3 lg:col-span-2">
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Síguenos</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Pinterest</a></li>
+</ul>
+</div>
+<div class="col-span-12 lg:col-span-4 mt-12 lg:mt-0 flex flex-col justify-between">
+<div>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-primary mb-6">Newsletter</h4>
+<div class="form-underline flex items-center">
+<input class="flex-grow bg-transparent border-none py-2 focus:ring-0 font-body-md text-body-md" placeholder="Su correo electrónico" type="email"/>
+<button class="material-symbols-outlined text-primary hover:text-brushed-bronze transition-colors">arrow_forward</button>
+</div>
+</div>
+<div class="mt-12">
+<p class="font-technical-data text-technical-data text-on-surface-variant">© 2024 DISERA Estudio de Arquitectura. Material Honesty &amp; Intellectual Rigor.</p>
+<div class="flex space-x-6 mt-4">
+<a class="font-technical-data text-technical-data text-on-surface-variant hover:text-brushed-bronze transition-colors" href="#">Legal</a>
+<a class="font-technical-data text-technical-data text-on-surface-variant hover:text-brushed-bronze transition-colors" href="#">Privacidad</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Reveal elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Form interaction micro-effects
+        document.querySelectorAll('input, select, textarea').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.closest('.form-underline').querySelector('label').style.letterSpacing = '0.2em';
+            });
+            input.addEventListener('blur', () => {
+                input.closest('.form-underline').querySelector('label').style.letterSpacing = '0.12em';
+            });
+        });
+
+        // Simple smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>

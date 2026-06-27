@@ -1,0 +1,178 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contacto | DISERA">
+  <Header />
+  
+  <!-- Technical Grid Layer -->
+  <div class="blueprint-grid"></div>
+
+  <main class="relative z-10 pt-48 pb-section-padding">
+    <div class="max-w-[1920px] mx-auto px-mobile-margin md:px-grid-margin">
+      <!-- Header Section -->
+      <header class="grid grid-cols-12 gap-grid-gutter mb-24">
+        <div class="col-span-12 md:col-span-8 lg:col-span-6 reveal-on-scroll" id="header-text">
+          <h1 class="font-display-lg text-headline-md md:text-display-lg text-primary mb-8 leading-tight uppercase">
+            Hablemos de su próximo espacio.
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+            Cada obra memorable comienza con una conversación en torno a la materia y el lugar. 
+            Entendemos la arquitectura como un compromiso entre la aspiración y la realidad constructiva.
+          </p>
+        </div>
+        <div class="col-span-12 md:col-span-4 lg:col-start-9 lg:col-span-4 flex flex-col justify-end reveal-on-scroll" style="transition-delay: 200ms;">
+          <div class="border-l border-obsidian/10 pl-8 py-4">
+            <span class="font-technical-data text-technical-data uppercase tracking-widest text-on-surface-variant mb-2 block">Sedes</span>
+            <p class="font-body-md text-body-md mb-1">Madrid — Barcelona</p>
+            <p class="font-body-md text-body-md text-on-surface-variant">Calle de la Materia 12, 28001</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Contact Form Section -->
+      <section class="grid grid-cols-12 gap-grid-gutter pt-12 border-t border-obsidian/10">
+        <div class="col-span-12 md:col-span-3 mb-12 md:mb-0">
+          <span class="font-technical-data text-technical-data uppercase tracking-widest text-brushed-bronze block mb-4">Información del encargo</span>
+          <p class="font-label-sm text-label-sm text-on-surface-variant pr-8">
+            Por favor, complete los campos detallados a continuación. Nuestro equipo de diseño revisará su propuesta y se pondrá en contacto en un plazo de 48 horas.
+          </p>
+        </div>
+        
+        <div class="col-span-12 md:col-span-9 lg:col-span-8 lg:col-start-5">
+          <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16 reveal-on-scroll" style="transition-delay: 400ms;">
+            <!-- Nombre -->
+            <div class="form-underline group">
+              <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Nombre y apellidos</label>
+              <input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary" placeholder="Ej. Sophia Al-Mansour" type="text" required/>
+            </div>
+            
+            <!-- Email -->
+            <div class="form-underline group">
+              <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Correo electrónico corporativo o privado</label>
+              <input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary" placeholder="contacto@dominio.com" type="email" required/>
+            </div>
+            
+            <!-- Teléfono -->
+            <div class="form-underline group">
+              <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Teléfono de contacto</label>
+              <input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary" placeholder="+34 600 000 000" type="tel"/>
+            </div>
+            
+            <!-- Ubicación -->
+            <div class="form-underline group">
+              <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Ubicación del emplazamiento</label>
+              <input class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary" placeholder="Ej. Mallorca, España / Ginebra, Suiza" type="text" required/>
+            </div>
+            
+            <!-- Tipo de encargo -->
+            <div class="form-underline group">
+              <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Tipo de encargo</label>
+              <div class="relative">
+                <select class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg text-primary appearance-none cursor-pointer" required>
+                  <option disabled selected value="">Seleccione una categoría</option>
+                  <option>Residencia unifamiliar</option>
+                  <option>Ático urbano / Reforma integral</option>
+                  <option>Espacio comercial o expositivo</option>
+                  <option>Diseño de colección / Producto a medida</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-0 bottom-2 text-on-surface-variant pointer-events-none">expand_more</span>
+              </div>
+            </div>
+            
+            <!-- Presupuesto -->
+            <div class="form-underline group">
+              <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Presupuesto estimado de ejecución</label>
+              <div class="relative">
+                <select class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg text-primary appearance-none cursor-pointer">
+                  <option disabled selected value="">Rango de inversión</option>
+                  <option>500.000 € – 1.000.000 €</option>
+                  <option>1.000.000 € – 2.500.000 €</option>
+                  <option>Más de 2.500.000 €</option>
+                  <option>Confidencial / A determinar</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-0 bottom-2 text-on-surface-variant pointer-events-none">expand_more</span>
+              </div>
+            </div>
+            
+            <!-- Visión del Proyecto -->
+            <div class="md:col-span-2 form-underline group">
+              <label class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest block mb-4 group-focus-within:text-brushed-bronze transition-colors">Visión del Proyecto</label>
+              <textarea class="w-full bg-transparent border-none p-0 pb-2 focus:ring-0 font-body-lg text-body-lg placeholder:text-on-surface-variant/30 text-primary resize-none" placeholder="Háblenos de la escala del proyecto, el terreno y las intenciones de su propuesta..." rows="4" required></textarea>
+            </div>
+            
+            <!-- CTA -->
+            <div class="md:col-span-2 pt-12">
+              <button class="group relative flex items-center justify-center border border-obsidian px-12 py-6 overflow-hidden transition-all duration-700 ease-in-out hover:text-travertine" type="submit">
+                <div class="absolute inset-0 bg-brushed-bronze translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out -z-10"></div>
+                <span class="font-label-sm text-label-sm uppercase tracking-[0.2em] relative z-10">Iniciar conversación</span>
+                <span class="material-symbols-outlined ml-4 relative z-10 transition-transform group-hover:translate-x-2">arrow_right_alt</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Decorative Image / Map Placeholder -->
+      <section class="grid grid-cols-12 gap-grid-gutter mt-32">
+        <div class="col-span-12 h-[512px] relative overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 reveal-on-scroll" style="transition-delay: 600ms;">
+          <div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBd1DNWvvwIm_ublHbpjgGfIyWsTpuLnX9PGG9aTNAzbjRCBN9pl-ruHbhyRLsIdrwUHeccamEjYkcNnf-dXHWchLtloLSRdt9nE9ICi6kpV64cvuoiBQSMnABkAl35V8I2mmS7d05Jo8zftijP4lbTvRbPiL_jfhHlK3xHSdbYDSQknqpOoNl3aW7YnEmnQIfIxkHdByZpPnGb5Hhw6oq9AKTF12zHgCqfzXlpiJydrAq0SuKe3ePfcrcAVRTdrCbjvsJAejuyOTI')"></div>
+          <div class="absolute inset-0 bg-obsidian/10"></div>
+          <div class="absolute bottom-8 left-8 bg-background/90 backdrop-blur-md px-6 py-4 border border-obsidian/5">
+            <span class="font-technical-data text-technical-data block uppercase mb-1">Localización de Estudio</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">40°24'59.4"N 3°41'16.1"W</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .blueprint-grid {
+    position: fixed;
+    inset: 0;
+    background-image: 
+      linear-gradient(to right, rgba(18, 18, 18, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(18, 18, 18, 0.05) 1px, transparent 1px);
+    background-size: calc(100% / 12) 100px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .form-underline {
+    position: relative;
+    border-bottom: 1px solid rgba(18, 18, 18, 0.2);
+    transition: border-color 0.5s ease;
+  }
+
+  .form-underline:focus-within {
+    border-color: #9E8060;
+  }
+
+  select {
+    appearance: none;
+    background: transparent;
+  }
+</style>
+
+<script>
+  // Form interaction micro-effects
+  document.querySelectorAll('input, select, textarea').forEach(input => {
+    const parent = input.closest('.form-underline');
+    if (!parent) return;
+    const label = parent.querySelector('label');
+    if (!label) return;
+
+    input.addEventListener('focus', () => {
+      label.style.letterSpacing = '0.2em';
+    });
+    input.addEventListener('blur', () => {
+      label.style.letterSpacing = '0.12em';
+    });
+  });
+</script>

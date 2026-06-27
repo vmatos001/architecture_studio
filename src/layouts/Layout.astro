@@ -1,0 +1,144 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="light">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+		
+		<!-- Google Fonts & Icons -->
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Inter:wght@400;500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+	</head>
+	<body class="antialiased overflow-x-hidden bg-background text-on-background selection:bg-brushed-bronze selection:text-travertine cursor-crosshair">
+		<div class="scroll-progress" id="progressBar"></div>
+		
+		<!-- Slot for page contents -->
+		<slot />
+
+		<style is:global>
+			/* CSS from Stitch */
+			body {
+				background-color: #fdf9f2;
+			}
+
+			.scroll-progress {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 1px;
+				background: #9E8060;
+				z-index: 100;
+				width: 0%;
+				transition: width 0.1s ease-out;
+			}
+
+			.material-symbols-outlined {
+				font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+				font-size: 1.25rem;
+			}
+
+			/* Reveal animations on scroll */
+			.fade-in-section {
+				opacity: 0;
+				transform: translateY(20px);
+				transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+			}
+
+			.fade-in-section.visible {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.reveal-clip {
+				clip-path: inset(0 100% 0 0);
+				transition: clip-path 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+			}
+
+			.reveal-clip.visible {
+				clip-path: inset(0 0 0 0);
+			}
+
+			/* Reveal-on-scroll alternative from estudio/proyectos */
+			.reveal-on-scroll {
+				opacity: 0;
+				transform: translateY(20px);
+				transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+			}
+
+			.reveal-on-scroll.active {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.line-draw {
+				width: 0%;
+				transition: width 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+			}
+
+			.line-draw.active {
+				width: 100%;
+			}
+
+			/* Custom scrollbar */
+			.custom-scrollbar::-webkit-scrollbar {
+				width: 6px;
+				height: 6px;
+			}
+			.custom-scrollbar::-webkit-scrollbar-track {
+				background: #fdf9f2;
+			}
+			.custom-scrollbar::-webkit-scrollbar-thumb {
+				background: #9E8060;
+			}
+		</style>
+
+		<script>
+			// Progress Bar logic
+			window.addEventListener('scroll', () => {
+				const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+				const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+				const progressBar = document.getElementById("progressBar");
+				if (progressBar) {
+					progressBar.style.width = scrolled + "%";
+				}
+			});
+
+			// Reveal animations observer
+			const observerOptions = {
+				threshold: 0.1,
+				rootMargin: '0px 0px -50px 0px'
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible', 'active');
+						const lines = entry.target.querySelectorAll('.line-draw');
+						lines.forEach(line => line.classList.add('active'));
+					}
+				});
+			}, observerOptions);
+
+			// Run observer on load and navigation
+			const observeElements = () => {
+				document.querySelectorAll('.fade-in-section, .reveal-clip, .reveal-on-scroll').forEach(el => {
+					observer.observe(el);
+				});
+			};
+
+			window.addEventListener('DOMContentLoaded', observeElements);
+			
+			// For SPA transitions if any
+			document.addEventListener('astro:after-swap', observeElements);
+		</script>
+	</body>
+</html>

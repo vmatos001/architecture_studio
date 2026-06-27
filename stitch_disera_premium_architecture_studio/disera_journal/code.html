@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Journal | DISERA Estudio de Arquitectura</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Outfit:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-error-container": "#93000a",
+                    "brushed-bronze": "#9E8060",
+                    "surface-container-high": "#ece8e1",
+                    "inverse-surface": "#31302c",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "secondary": "#74593c",
+                    "travertine": "#EAE6DF",
+                    "inverse-primary": "#c8c6c5",
+                    "primary-container": "#1c1b1b",
+                    "on-secondary-container": "#795e40",
+                    "surface-container-highest": "#e6e2db",
+                    "surface-container": "#f1ede6",
+                    "on-tertiary-fixed": "#141b2f",
+                    "on-surface": "#1c1c18",
+                    "on-background": "#1c1c18",
+                    "outline-variant": "#c4c7c7",
+                    "on-tertiary-container": "#7d839c",
+                    "error": "#ba1a1a",
+                    "shattered-plaster": "#8C92AC",
+                    "surface-variant": "#e6e2db",
+                    "on-secondary-fixed": "#2a1802",
+                    "surface-dim": "#dddad3",
+                    "surface-tint": "#5f5e5e",
+                    "obsidian": "#121212",
+                    "tertiary-container": "#141b2f",
+                    "on-surface-variant": "#444748",
+                    "tertiary-fixed": "#dce1fe",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#5a4227",
+                    "tertiary": "#000000",
+                    "background": "#fdf9f2",
+                    "secondary-fixed": "#ffddba",
+                    "primary": "#000000",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#e5e2e1",
+                    "on-tertiary-fixed-variant": "#40465d",
+                    "on-primary-fixed-variant": "#474646",
+                    "inverse-on-surface": "#f4f0e9",
+                    "surface-container-low": "#f7f3ec",
+                    "secondary-fixed-dim": "#e3c09d",
+                    "on-secondary": "#ffffff",
+                    "surface": "#fdf9f2",
+                    "on-primary": "#ffffff",
+                    "on-tertiary": "#ffffff",
+                    "outline": "#747878",
+                    "on-primary-container": "#858383",
+                    "tertiary-fixed-dim": "#c0c5e1",
+                    "surface-bright": "#fdf9f2",
+                    "secondary-container": "#fed9b4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "mobile-margin": "1.5rem",
+                    "hairline": "1px",
+                    "grid-gutter": "2rem",
+                    "section-padding": "8rem",
+                    "grid-margin": "4rem"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Outfit"],
+                    "label-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Outfit"],
+                    "technical-data": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Outfit"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["48px", {"lineHeight": "1.2", "letterSpacing": "0.1em", "fontWeight": "300"}],
+                    "label-sm": ["12px", {"lineHeight": "1.5", "letterSpacing": "0.12em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.8", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "300"}],
+                    "technical-data": ["11px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "1.1", "letterSpacing": "0.15em", "fontWeight": "300"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+            font-size: 1.25rem;
+        }
+        
+        .grid-lines {
+            background-image: linear-gradient(to right, rgba(18, 18, 18, 0.05) 1px, transparent 1px);
+            background-size: calc((100% - (2 * 4rem)) / 12 + 2rem) 100%;
+        }
+
+        @media (max-width: 768px) {
+            .grid-lines {
+                background-size: calc((100% - (2 * 1.5rem)) / 4 + 1.5rem) 100%;
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .line-growth {
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        .line-growth.visible {
+            transform: scaleX(1);
+        }
+
+        .custom-cursor {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #9E8060;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-brushed-bronze selection:text-white overflow-x-hidden">
+<div class="custom-cursor" id="cursor"></div>
+<!-- Background Grid Lines -->
+<div class="fixed inset-0 pointer-events-none z-[-1] opacity-40 mix-blend-multiply">
+<div class="h-full w-full max-w-[1920px] mx-auto px-grid-margin grid grid-cols-4 md:grid-cols-12 gap-grid-gutter">
+<div class="border-l border-obsidian/10 h-full"></div>
+<div class="border-l border-obsidian/10 h-full"></div>
+<div class="border-l border-obsidian/10 h-full"></div>
+<div class="border-l border-obsidian/10 h-full"></div>
+<div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+<div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+<div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+<div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+<div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+<div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+<div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+<div class="hidden md:block border-l border-obsidian/10 h-full border-r"></div>
+</div>
+</div>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/80 dark:bg-obsidian/80 backdrop-blur-xl border-b border-obsidian/10 dark:border-travertine/10 h-24">
+<div class="flex justify-between items-center w-full px-grid-margin h-full max-w-[1920px] mx-auto">
+<div class="flex items-center gap-2">
+<span class="font-display-lg text-headline-md tracking-[0.2em] text-primary dark:text-inverse-primary uppercase">DISERA</span>
+</div>
+<nav class="hidden md:flex gap-12 items-center">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 uppercase" href="#">Proyectos</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 uppercase" href="#">Estudio</a>
+<a class="font-label-sm text-label-sm text-primary dark:text-inverse-primary border-b border-brushed-bronze pb-1 uppercase" href="#">Journal</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-500 uppercase" href="#">Contacto</a>
+</nav>
+<button class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-40 max-w-[1920px] mx-auto">
+<!-- Hero Section / Journal Header -->
+<section class="px-grid-margin mb-32 overflow-hidden">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<div class="col-span-12 md:col-span-8">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-12 scroll-reveal">Journal</h1>
+<div class="w-24 h-px bg-brushed-bronze mb-12 line-growth"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl scroll-reveal">
+                        Una bitácora sobre la quietud, el material y el espacio. Reflexiones editoriales de DISERA sobre la arquitectura como permanencia.
+                    </p>
+</div>
+<div class="col-span-12 md:col-span-4 flex flex-col justify-end items-start md:items-end">
+<div class="font-technical-data text-technical-data uppercase tracking-widest text-brushed-bronze scroll-reveal">
+                        EDICIÓN Nº 04 / 2024
+                    </div>
+</div>
+</div>
+</section>
+<!-- Main Featured Article: La Poética de la Sombra -->
+<section class="px-grid-margin mb-section-padding scroll-reveal">
+<div class="grid grid-cols-12 gap-grid-gutter border-t border-obsidian/10 pt-8">
+<div class="col-span-12 md:col-span-7 relative group overflow-hidden">
+<div class="aspect-[16/9] w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105" data-alt="A cinematic, high-contrast architectural photograph of a minimalist concrete corridor. Intense sunlight streams through a narrow overhead opening, creating sharp, dramatic shadows against the brutalist texture of the gray walls. The scene is silent and atmospheric, with a color palette of deep grays, brilliant whites, and subtle travertine undertones, emphasizing the play between light and void in modern luxury architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu1wiy5qAEIuSNCnIcpuLGSzpNN9pJbTaA9kxBnHl9V5drlLTwGS3RkDwAQuQNXHn-_cZQReicaCY8AbQWjFcvgXXqvyI3GHQO4t-utbBdAp0dPN2ky0xMpJUihLNVr___bQ8UXUODjYl5t7Z9nZ5DZs5xzOsyYSssUeWluLGUVyr2ePyUj-YBy1_dkZJjPz9MDyhi9eUW1YFbBVHLVpYgWuPMQAhHeD9kS8YEuGUVWbckyuO336p-PQUwT9Vdfkj7DW2_5QY9TQI"/>
+</div>
+<div class="mt-8 flex justify-between items-start">
+<div>
+<span class="font-technical-data text-technical-data uppercase text-brushed-bronze">01 / ENSAYO</span>
+<h2 class="font-display-lg text-headline-md mt-2 text-primary group-hover:text-brushed-bronze transition-colors duration-500">La poética de la sombra</h2>
+</div>
+<div class="font-technical-data text-technical-data uppercase text-on-surface-variant">MIN: 08 READ</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-4 md:col-start-9 flex flex-col justify-between py-4">
+<div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-12 leading-relaxed">
+                            {{DATA:DOCUMENT:DOCUMENT_2}} <!-- Contenido de bitácora sobre la profundidad del vacío y la luz filtrada -->
+</p>
+<a class="inline-flex items-center group" href="#">
+<span class="font-label-sm text-label-sm uppercase tracking-widest border-b border-primary group-hover:border-brushed-bronze transition-all duration-300">Leer artículo completo</span>
+<span class="material-symbols-outlined ml-2 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<div class="mt-12 md:mt-0 pt-8 border-t border-obsidian/5">
+<div class="flex gap-4">
+<span class="font-technical-data text-technical-data text-on-surface-variant">TEMAS:</span>
+<span class="font-technical-data text-technical-data text-primary">LUZ / VACÍO / BRUTALISMO</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Articles: Asymmetric Grid -->
+<section class="px-grid-margin mb-section-padding">
+<div class="grid grid-cols-12 gap-grid-gutter">
+<!-- Article 2: Travertino y Tactilidad -->
+<div class="col-span-12 md:col-span-5 mb-16 md:mb-0 scroll-reveal">
+<div class="aspect-[4/5] w-full relative overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105" data-alt="Close-up macro photography of raw travertine stone textures. The lighting is soft and directional, highlighting the porous craters and sandy, cream-colored sediment layers. The aesthetic is extremely tactile and earthy, fitting a high-end architectural journal. Subtle bronze reflections hint at refined luxury. The composition is balanced and minimalist, emphasizing material honesty and intellectual rigor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxfu9ODckFF-GT78bNzHK6k668_UF5sz1O1SEW72O1wI0JoiFvxqsmicS_zURGxqJwZw4gJiH6CYMaO7iFeKxzIFrp6WMEOflTCOQefVLIsPvG6DaPDVTm6FdGS-8iZbabato3ZWSBX4gFeiso-J6K-q9nZJ9H3cjBt0maSzbzMpiYyh_1zl8PxpMADsY9bQ_RRwMJBjuGLbEog9TatR1yUHo4LnlR_Z5k6iBLRuACA1ZlmD9y3p_Vwi0S7uvNHfy7nGpsxBRlUiU"/>
+<div class="absolute inset-0 bg-obsidian/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+</div>
+<div class="mt-8 border-b border-obsidian/10 pb-8">
+<span class="font-technical-data text-technical-data uppercase text-brushed-bronze">02 / MATERIALIDAD</span>
+<h3 class="font-display-lg text-headline-md mt-2 text-primary">Travertino y tactilidad</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 line-clamp-3">
+                            La piedra no es solo soporte, es memoria táctil. Exploramos el uso del travertino romano en la arquitectura contemporánea de alta gama y su relación con el tiempo.
+                        </p>
+</div>
+</div>
+<!-- Article 3: El detalle invisible -->
+<div class="col-span-12 md:col-span-6 md:col-start-7 mt-0 md:mt-32 scroll-reveal">
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="w-full md:w-2/3 order-2 md:order-1">
+<span class="font-technical-data text-technical-data uppercase text-brushed-bronze">03 / TÉCNICA</span>
+<h3 class="font-display-lg text-headline-md mt-2 text-primary">El detalle invisible</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 mb-8">
+                                Donde la ingeniería se funde con el arte. El rigor técnico permite que la estructura desaparezca, dejando paso a la experiencia pura del espacio habitado.
+                            </p>
+<div class="flex flex-col gap-2">
+<div class="flex justify-between font-technical-data border-b border-obsidian/10 py-2">
+<span>FECHA</span>
+<span>OCT 2024</span>
+</div>
+<div class="flex justify-between font-technical-data border-b border-obsidian/10 py-2">
+<span>AUTOR</span>
+<span>DISERA STUDIO</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/3 aspect-square bg-travertine order-1 md:order-2 overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:rotate-1" data-alt="Architectural technical drawing fragment overlaid on a photograph of a sleek metal and glass junction. The image shows a precise, 1px line blueprint detailing a hidden hinge mechanism. The style is schematic and engineering-focused, with high-key lighting and a palette of silver, obsidian black, and bone white. It captures the essence of sophisticated, invisible construction details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5SqruuNWZEys6yRG5Fw9QT9eQZILfPUigMBJqMBHNVgwpyd48HkmQvowh84PUdvSQchL_YI7Oo2bbGPkO8SaO4wQqs9mLOg9lnmmjITsT46vM1b7d4nf4aYJ8hCTAckJ_GTF7AM9wU5PXkpsgiaT02C5sZp4rZm2pElka7XIiKNWODJ6ngRc_jHbdGiuCQRGQtS67xElajaWOEmUffLTXLgEmSwK8VKlfi8jgu5mgOrzSAV9qxMIZuwVE0PzM55J4LYW4dBIlaOM"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Manifesto -->
+<section class="bg-travertine/30 border-y border-obsidian/10 py-section-padding px-grid-margin mb-section-padding overflow-hidden relative">
+<!-- Background Decoration: Slow WebGL feel through SVG -->
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
+
+</div>
+<div class="grid grid-cols-12 gap-grid-gutter relative z-10">
+<div class="col-span-12 md:col-span-6 flex flex-col justify-center">
+<h2 class="font-display-lg text-headline-md text-primary mb-8 scroll-reveal">Suscribirse a la Bitácora</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-12 scroll-reveal">
+                        Reciba bimestralmente nuestras reflexiones sobre arquitectura, diseño de materiales y la evolución del espacio habitado. Sin ruido, solo rigor.
+                    </p>
+</div>
+<div class="col-span-12 md:col-span-5 md:col-start-8 flex flex-col justify-center scroll-reveal">
+<form class="space-y-8">
+<div class="relative">
+<label class="font-label-sm text-label-sm text-on-surface-variant block mb-2 uppercase">Email Address</label>
+<input class="w-full bg-transparent border-0 border-b border-obsidian py-4 px-0 focus:ring-0 focus:border-brushed-bronze transition-colors placeholder:text-on-surface-variant/30 text-primary" placeholder="example@disera.es" type="email"/>
+</div>
+<button class="w-full md:w-auto px-12 py-4 border border-obsidian text-primary font-label-sm uppercase tracking-widest hover:bg-brushed-bronze hover:text-travertine transition-all duration-700 ease-in-out group flex items-center justify-center gap-4" type="submit">
+                            Unirse al Journal
+                            <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">send</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Archives Section -->
+<section class="px-grid-margin mb-section-padding">
+<div class="flex justify-between items-end mb-12 scroll-reveal">
+<h3 class="font-display-lg text-headline-md text-primary">Archivo</h3>
+<span class="font-technical-data text-technical-data text-on-surface-variant">TOTAL: 18 ARTÍCULOS</span>
+</div>
+<div class="space-y-px bg-obsidian/10">
+<!-- Archive Item 1 -->
+<a class="grid grid-cols-12 gap-grid-gutter bg-background py-8 group hover:bg-surface-container transition-colors duration-500 px-4 -mx-4 scroll-reveal" href="#">
+<div class="col-span-2 font-technical-data text-on-surface-variant">AGO 2024</div>
+<div class="col-span-7 font-headline-md text-body-lg text-primary group-hover:translate-x-4 transition-transform duration-700">El silencio del concreto: Un recorrido por la obra de Peter Zumthor</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-brushed-bronze">arrow_outward</span>
+</div>
+</a>
+<!-- Archive Item 2 -->
+<a class="grid grid-cols-12 gap-grid-gutter bg-background py-8 group hover:bg-surface-container transition-colors duration-500 px-4 -mx-4 scroll-reveal" href="#">
+<div class="col-span-2 font-technical-data text-on-surface-variant">JUN 2024</div>
+<div class="col-span-7 font-headline-md text-body-lg text-primary group-hover:translate-x-4 transition-transform duration-700">Estructura y Poesía: La viga como elemento narrativo</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-brushed-bronze">arrow_outward</span>
+</div>
+</a>
+<!-- Archive Item 3 -->
+<a class="grid grid-cols-12 gap-grid-gutter bg-background py-8 group hover:bg-surface-container transition-colors duration-500 px-4 -mx-4 scroll-reveal" href="#">
+<div class="col-span-2 font-technical-data text-on-surface-variant">ABR 2024</div>
+<div class="col-span-7 font-headline-md text-body-lg text-primary group-hover:translate-x-4 transition-transform duration-700">Fenomenología del Umbral: El tránsito entre interior y exterior</div>
+<div class="col-span-3 text-right">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-brushed-bronze">arrow_outward</span>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background dark:bg-obsidian border-t border-obsidian/10 dark:border-travertine/10 w-full">
+<div class="grid grid-cols-12 gap-grid-gutter px-grid-margin py-section-padding w-full max-w-[1920px] mx-auto">
+<div class="col-span-12 md:col-span-4 mb-12 md:mb-0">
+<span class="font-display-lg text-headline-md tracking-widest text-primary dark:text-inverse-primary block mb-8 uppercase">DISERA</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-surface-variant max-w-xs">
+                    Estudio de Arquitectura dedicado a la búsqueda de la belleza a través del rigor y la honestidad material.
+                </p>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-sm text-label-sm text-primary dark:text-inverse-primary uppercase mb-6">Estudio</h4>
+<ul class="space-y-4">
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors" href="#">Proyectos</a></li>
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors" href="#">Equipo</a></li>
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a></li>
+</ul>
+</div>
+<div class="col-span-6 md:col-span-2">
+<h4 class="font-label-sm text-label-sm text-primary dark:text-inverse-primary uppercase mb-6">Social</h4>
+<ul class="space-y-4">
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">Instagram</a></li>
+<li><a class="font-technical-data text-technical-data text-on-surface-variant hover:text-primary transition-colors uppercase" href="#">LinkedIn</a></li>
+</ul>
+</div>
+<div class="col-span-12 md:col-span-4 mt-12 md:mt-0 flex flex-col md:items-end justify-between">
+<div class="text-right hidden md:block">
+<span class="material-symbols-outlined text-4xl text-brushed-bronze">architecture</span>
+</div>
+<div class="font-technical-data text-technical-data text-on-surface-variant dark:text-surface-variant text-left md:text-right">
+                    © 2024 DISERA Estudio de Arquitectura. Material Honesty &amp; Intellectual Rigor.
+                </div>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        // Custom Cursor Movement
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(4)';
+                cursor.style.backgroundColor = 'rgba(158, 128, 96, 0.1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                cursor.style.backgroundColor = 'transparent';
+            });
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal, .line-growth').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Horizontal Scroll Indicator (Minimalist)
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            // You could add a progress bar here if needed
+        });
+    </script>
+</body></html>

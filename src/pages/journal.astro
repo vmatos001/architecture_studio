@@ -1,0 +1,246 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Journal | DISERA">
+  <Header />
+
+  <!-- Custom cursor element -->
+  <div class="custom-cursor" id="cursor"></div>
+
+  <!-- Background Grid Lines -->
+  <div class="fixed inset-0 pointer-events-none z-[-1] opacity-40 mix-blend-multiply">
+    <div class="h-full w-full max-w-[1920px] mx-auto px-mobile-margin md:px-grid-margin grid grid-cols-4 md:grid-cols-12 gap-grid-gutter">
+      <div class="border-l border-obsidian/10 h-full"></div>
+      <div class="border-l border-obsidian/10 h-full"></div>
+      <div class="border-l border-obsidian/10 h-full"></div>
+      <div class="border-l border-obsidian/10 h-full"></div>
+      <div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+      <div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+      <div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+      <div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+      <div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+      <div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+      <div class="hidden md:block border-l border-obsidian/10 h-full"></div>
+      <div class="hidden md:block border-l border-obsidian/10 h-full border-r"></div>
+    </div>
+  </div>
+
+  <main class="pt-40 max-w-[1920px] mx-auto">
+    <!-- Hero Section / Journal Header -->
+    <section class="px-mobile-margin md:px-grid-margin mb-32 overflow-hidden">
+      <div class="grid grid-cols-12 gap-grid-gutter">
+        <div class="col-span-12 md:col-span-8">
+          <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-12 scroll-reveal uppercase">Journal</h1>
+          <div class="w-24 h-px bg-brushed-bronze mb-12 line-growth"></div>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl scroll-reveal">
+            Una bitácora sobre la quietud, el material y el espacio. Reflexiones editoriales de DISERA sobre la arquitectura como permanencia.
+          </p>
+        </div>
+        <div class="col-span-12 md:col-span-4 flex flex-col justify-end items-start md:items-end">
+          <div class="font-technical-data text-technical-data uppercase tracking-widest text-brushed-bronze scroll-reveal">
+            EDICIÓN Nº 04 / 2024
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Featured Article: La Poética de la Sombra -->
+    <section class="px-mobile-margin md:px-grid-margin mb-section-padding scroll-reveal">
+      <div class="grid grid-cols-12 gap-grid-gutter border-t border-obsidian/10 pt-8">
+        <div class="col-span-12 md:col-span-7 relative group overflow-hidden">
+          <div class="aspect-[16/9] w-full overflow-hidden">
+            <img 
+              class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105" 
+              alt="La poética de la sombra" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu1wiy5qAEIuSNCnIcpuLGSzpNN9pJbTaA9kxBnHl9V5drlLTwGS3RkDwAQuQNXHn-_cZQReicaCY8AbQWjFcvgXXqvyI3GHQO4t-utbBdAp0dPN2ky0xMpJUihLNVr___bQ8UXUODjYl5t7Z9nZ5DZs5xzOsyYSssUeWluLGUVyr2ePyUj-YBy1_dkZJjPz9MDyhi9eUW1YFbBVHLVpYgWuPMQAhHeD9kS8YEuGUVWbckyuO336p-PQUwT9Vdfkj7DW2_5QY9TQI"
+            />
+          </div>
+          <div class="mt-8 flex justify-between items-start">
+            <div>
+              <span class="font-technical-data text-technical-data uppercase text-brushed-bronze">01 / ENSAYO</span>
+              <h2 class="font-display-lg text-headline-md mt-2 text-primary group-hover:text-brushed-bronze transition-colors duration-500 uppercase">La poética de la sombra</h2>
+            </div>
+            <div class="font-technical-data text-technical-data uppercase text-on-surface-variant">MIN: 08 READ</div>
+          </div>
+        </div>
+        
+        <div class="col-span-12 md:col-span-4 md:col-start-9 flex flex-col justify-between py-4">
+          <div>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-12 leading-relaxed">
+              Analizamos la sombra no como un vacío de información, sino como el plano dinámico que dota de masa, peso y tridimensionalidad al hormigón visto. Es el plano que define el espacio y revela la materia.
+            </p>
+            <a class="inline-flex items-center group" href="#">
+              <span class="font-label-sm text-label-sm uppercase tracking-widest border-b border-primary group-hover:border-brushed-bronze transition-all duration-300">Leer artículo completo</span>
+              <span class="material-symbols-outlined ml-2 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+          </div>
+          <div class="mt-12 md:mt-0 pt-8 border-t border-obsidian/5">
+            <div class="flex gap-4">
+              <span class="font-technical-data text-technical-data text-on-surface-variant">TEMAS:</span>
+              <span class="font-technical-data text-technical-data text-primary">LUZ / VACÍO / BRUTALISMO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Secondary Articles: Asymmetric Grid -->
+    <section class="px-mobile-margin md:px-grid-margin mb-section-padding">
+      <div class="grid grid-cols-12 gap-grid-gutter">
+        <!-- Article 2: Travertino y Tactilidad -->
+        <div class="col-span-12 md:col-span-5 mb-16 md:mb-0 scroll-reveal">
+          <div class="aspect-[4/5] w-full relative overflow-hidden group">
+            <img 
+              class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105" 
+              alt="Travertino y tactilidad" 
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxfu9ODckFF-GT78bNzHK6k668_UF5sz1O1SEW72O1wI0JoiFvxqsmicS_zURGxqJwZw4gJiH6CYMaO7iFeKxzIFrp6WMEOflTCOQefVLIsPvG6DaPDVTm6FdGS-8iZbabato3ZWSBX4gFeiso-J6K-q9nZJ9H3cjBt0maSzbzMpiYyh_1zl8PxpMADsY9bQ_RRwMJBjuGLbEog9TatR1yUHo4LnlR_Z5k6iBLRuACA1ZlmD9y3p_Vwi0S7uvNHfy7nGpsxBRlUiU"
+            />
+            <div class="absolute inset-0 bg-obsidian/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          </div>
+          <div class="mt-8 border-b border-obsidian/10 pb-8">
+            <span class="font-technical-data text-technical-data uppercase text-brushed-bronze">02 / MATERIALIDAD</span>
+            <h3 class="font-display-lg text-headline-md mt-2 text-primary uppercase">Travertino y tactilidad</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-4 line-clamp-3">
+              Un recorrido por las canteras históricas de la Toscana y la elección de superficies no pulidas que registran de forma noble el paso de los años. La piedra no es solo soporte, es memoria táctil.
+            </p>
+          </div>
+        </div>
+
+        <!-- Article 3: El detalle invisible -->
+        <div class="col-span-12 md:col-span-6 md:col-start-7 mt-0 md:mt-32 scroll-reveal">
+          <div class="flex flex-col md:flex-row gap-8 items-start">
+            <div class="w-full md:w-2/3 order-2 md:order-1">
+              <span class="font-technical-data text-technical-data uppercase text-brushed-bronze">03 / TÉCNICA</span>
+              <h3 class="font-display-lg text-headline-md mt-2 text-primary uppercase">El detalle invisible</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant mt-4 mb-8">
+                Desde juntas de dilatación integradas hasta carpinterías enrasadas al milímetro. Por qué la verdadera sofisticación reside en lo que no se percibe, donde la ingeniería se funde con el arte.
+              </p>
+              <div class="flex flex-col gap-2">
+                <div class="flex justify-between font-technical-data border-b border-obsidian/10 py-2">
+                  <span>FECHA</span>
+                  <span>OCT 2024</span>
+                </div>
+                <div class="flex justify-between font-technical-data border-b border-obsidian/10 py-2">
+                  <span>AUTOR</span>
+                  <span>DISERA STUDIO</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full md:w-1/3 aspect-square bg-travertine order-1 md:order-2 overflow-hidden group">
+              <img 
+                class="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:rotate-1" 
+                alt="El detalle invisible" 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5SqruuNWZEys6yRG5Fw9QT9eQZILfPUigMBJqMBHNVgwpyd48HkmQvowh84PUdvSQchL_YI7Oo2bbGPkO8SaO4wQqs9mLOg9lnmmjITsT46vM1b7d4nf4aYJ8hCTAckJ_GTF7AM9wU5PXkpsgiaT02C5sZp4rZm2pElka7XIiKNWODJ6ngRc_jHbdGiuCQRGQtS67xElajaWOEmUffLTXLgEmSwK8VKlfi8jgu5mgOrzSAV9qxMIZuwVE0PzM55J4LYW4dBIlaOM"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter / Manifesto -->
+    <section class="bg-travertine/30 border-y border-obsidian/10 py-section-padding px-mobile-margin md:px-grid-margin mb-section-padding overflow-hidden relative">
+      <div class="grid grid-cols-12 gap-grid-gutter relative z-10">
+        <div class="col-span-12 md:col-span-6 flex flex-col justify-center">
+          <h2 class="font-display-lg text-headline-md text-primary mb-8 scroll-reveal uppercase">Suscribirse a la Bitácora</h2>
+          <p class="font-body-md text-body-md text-on-surface-variant mb-12 scroll-reveal">
+            Reciba bimestralmente nuestras reflexiones sobre arquitectura, diseño de materiales y la evolución del espacio habitado. Sin ruido, solo rigor.
+          </p>
+        </div>
+        <div class="col-span-12 md:col-span-5 md:col-start-8 flex flex-col justify-center scroll-reveal">
+          <form class="space-y-8">
+            <div class="relative">
+              <label class="font-label-sm text-label-sm text-on-surface-variant block mb-2 uppercase">Email Address</label>
+              <input class="w-full bg-transparent border-0 border-b border-obsidian py-4 px-0 focus:ring-0 focus:border-brushed-bronze transition-colors placeholder:text-on-surface-variant/30 text-primary" placeholder="example@disera.es" type="email"/>
+            </div>
+            <button class="w-full md:w-auto px-12 py-4 border border-obsidian text-primary font-label-sm uppercase tracking-widest hover:bg-brushed-bronze hover:text-travertine transition-all duration-700 ease-in-out group flex items-center justify-center gap-4" type="submit">
+              Unirse al Journal
+              <span class="material-symbols-outlined text-sm opacity-0 group-hover:opacity-100 transition-opacity">send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Archives Section -->
+    <section class="px-mobile-margin md:px-grid-margin mb-section-padding">
+      <div class="flex justify-between items-end mb-12 scroll-reveal">
+        <h3 class="font-display-lg text-headline-md text-primary uppercase">Archivo</h3>
+        <span class="font-technical-data text-technical-data text-on-surface-variant">TOTAL: 18 ARTÍCULOS</span>
+      </div>
+      
+      <div class="space-y-px bg-obsidian/10">
+        <!-- Archive Item 1 -->
+        <a class="grid grid-cols-12 gap-grid-gutter bg-background py-8 group hover:bg-surface-container transition-colors duration-500 px-4 -mx-4 scroll-reveal" href="#">
+          <div class="col-span-2 font-technical-data text-on-surface-variant">AGO 2024</div>
+          <div class="col-span-7 font-headline-md text-body-lg text-primary group-hover:translate-x-4 transition-transform duration-700">El silencio del concreto: Un recorrido por la obra de Peter Zumthor</div>
+          <div class="col-span-3 text-right">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-brushed-bronze">arrow_outward</span>
+          </div>
+        </a>
+        <!-- Archive Item 2 -->
+        <a class="grid grid-cols-12 gap-grid-gutter bg-background py-8 group hover:bg-surface-container transition-colors duration-500 px-4 -mx-4 scroll-reveal" href="#">
+          <div class="col-span-2 font-technical-data text-on-surface-variant">JUN 2024</div>
+          <div class="col-span-7 font-headline-md text-body-lg text-primary group-hover:translate-x-4 transition-transform duration-700">Estructura y Poesía: La viga como elemento narrativo</div>
+          <div class="col-span-3 text-right">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-brushed-bronze">arrow_outward</span>
+          </div>
+        </a>
+        <!-- Archive Item 3 -->
+        <a class="grid grid-cols-12 gap-grid-gutter bg-background py-8 group hover:bg-surface-container transition-colors duration-500 px-4 -mx-4 scroll-reveal" href="#">
+          <div class="col-span-2 font-technical-data text-on-surface-variant">ABR 2024</div>
+          <div class="col-span-7 font-headline-md text-body-lg text-primary group-hover:translate-x-4 transition-transform duration-700">Fenomenología del Umbral: El tránsito entre interior y exterior</div>
+          <div class="col-span-3 text-right">
+            <span class="material-symbols-outlined text-on-surface-variant group-hover:text-brushed-bronze">arrow_outward</span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  .custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #9E8060;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    transform: translate(-50%, -50%);
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .custom-cursor {
+      display: block;
+    }
+  }
+</style>
+
+<script>
+  // Custom Cursor Movement
+  const cursor = document.getElementById('cursor');
+  if (cursor) {
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    document.querySelectorAll('a, button, input').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(4)';
+        cursor.style.backgroundColor = 'rgba(158, 128, 96, 0.1)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursor.style.backgroundColor = 'transparent';
+      });
+    });
+  }
+</script>
