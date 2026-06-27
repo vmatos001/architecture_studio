@@ -31,6 +31,6 @@ jobs:
           FIREBASE_KEY_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_ARCHITECTURE_STUDIO_EE3E4 }}
         run: |
           printf "%s" "$FIREBASE_KEY_JSON" > firebase-key.json
-          export GOOGLE_APPLICATION_CREDENTIALS=firebase-key.json
-          npx firebase deploy --only hosting --project architecture-studio-ee3e4
+          export GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/firebase-key.json
+          npx firebase deploy --only hosting --project architecture-studio-ee3e4 > deploy.log 2>&1 || (cat deploy.log && exit 1)
           rm firebase-key.json
